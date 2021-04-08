@@ -6,7 +6,7 @@ import prihanofficial.com.kokis.helpers.Mode;
 import prihanofficial.com.kokis.helpers.UserDefault;
 import prihanofficial.com.kokis.logics.Kokis;
 
-public class GreenCountry extends Application {
+public class TrashCash extends Application {
 
     @Override
     public void onCreate() {
