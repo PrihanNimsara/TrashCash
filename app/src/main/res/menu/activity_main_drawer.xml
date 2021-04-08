@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/menu_home"/>
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_buyer"
+            android:title="@string/menu_buyer" />
+        <item
+            android:id="@+id/nav_calendar"
+            android:title="@string/menu_Calendar" />
+        <item
+            android:id="@+id/nav_news"
+            android:title="@string/menu_news" />
+        <item
+            android:id="@+id/nav_faq"
+            android:title="@string/menu_faq" />
+    </group>
+</menu>

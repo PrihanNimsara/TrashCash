@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#56B25B</color>-->
+<!--    <color name="colorPrimaryDark">#347838</color>-->
+<!--    <color name="colorAccent">#E1E6EB</color>-->
+
+<!--    <color name="colorGreen">#56B25B</color>-->
+    <color name="light_g">#DDF4BE</color>
+
+
+    <color name="colorPrimary">#9E3038</color>
+<color name="colorPrimaryDark">#6C2329</color>
+<color name="colorAccent">#03DAC5</color>
+
+
+<color name="colorBlack">#000000</color>
+
+<color name="colorMainRed">#9E3038</color>
+<color name="colorGreen">#4CAF50</color>
+
+
+
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPureBlack">#000000</color>
+    <color name="colorBackground">#131A20</color>
+    <color name="btn_def_normal_color_gray">#272e35</color>
+    <color name="colorItemBackGround">#1b242a</color>
+    <color name="colorFadeGray">#414f5a</color>
+    <color name="item_second_string">#a6a7a7</color>
+
+    <color name="colorLimeGreen">#00FF00</color>
+    <color name="color_available_green">#06AC81</color>
+    <color name="color_button_press_green">#0AB812</color>
+    <color name="color_dialog_box_button_press_green">#FF0BA412</color>
+
+    <color name="colorLimeRed">#FF0000</color>
+    <color name="color_availale_red">#A22424</color>
+    <color name="color_button_press_red">#da2b34</color>
+    <color name="color_dialog_box_button_press_red">#FFC72B33</color>
+
+    <color name="colorLimeYellow">#ffff00</color>
+    <color name="color_availale_yellow">#FFCA01</color>
+    <color name="color_button_press_yellow">#F7D456</color>
+    <color name="color_dialog_box_button_press_yellow">#FFE9C959</color>
+
+    <color name="color_item_text">#999999</color>
+
+    <!--                                  -->
+
+
+    <color name="registration_button">#F3303A</color>
+
+    <color name="my_conversation_color_red">#F33A38</color>
+
+
+
+
+
+    <color name="reg_background">#FF121A20</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="transparenttwo">#00000000</color>
+
+    <color name="textFieldBackground">#242D34</color>
+
+    <color name="textFieldPressed">#1c2429</color>
+
+    <color name="homeButtonBackground">#2D3238</color>
+
+    <color name="home_btn_list_bg">#141d24</color>
+
+    <color name="msg_bg">#ffffff</color>
+
+    <color name="msg_bg_black">#121a20</color>
+
+    <color name="msg_border_color">#5d6771</color>
+
+    <color name="registration_button_pressed">#c2262e</color>
+
+
+
+    <color name="relative_layout_color">#ffffff</color>
+
+
+
+    <color name="transparent_white">#80ffffff</color>
+
+    <color name="text_hint">#d4d4d4</color>
+
+    <color name="message_pending">#71878787</color>
+
+    <color name="transparent_text_view">#90999999</color>
+
+    <color name="fill_color_env">#40999999</color>
+
+
+
+    <color name="white">#ffffff</color>
+
+    <color name="message_item_bg">#272e35</color>
+
+    <color name="pure_black">#000</color>
+
+
+    <color name="button_disable">#939393</color>
+    <color name="disabled_click">#0f1419</color>
+    <color name="registration_seperator">#50585f</color>
+    <color name="redButtonDisable">#79181d</color>
+
+
+    <color name="btn_def_normal_press_color_gray">#495056</color>
+    <color name="btn_def_disable_color_gray">#1b2228</color>
+    <color name="btn_action_press_color_gray">#495056</color>
+
+
+
+    <color name="btn_action_disable_color_gray">#1e272f</color>
+
+    <color name="btn_submit_disable_color">#9af33a38</color>
+
+    <color name="btn_submit_press">#f96565</color>
+
+    <color name="btn_submit_normal_color">#F33A38</color>
+
+    <color name="text_color">#BDBDBE</color>
+
+    <color name="conversation_list_item_back_color">#F2F2F2</color>
+
+
+
+
+
+    <color name="color_black_one">#000</color>
+
+    <color name="color_black_two">#1c2429</color>
+
+    <color name="color_black_tree">#2D3238</color>
+
+
+
+
+
+
+    <color name="message_search_sigle_item_color">#FCF5DB</color>
+    <color name="dialog_header_gray">#2a3036</color>
+
+
+    <color name="side_nav_bar_back_color">#282F35</color>
+    <color name="time_ago">#a5a5a6</color>
+    <color name="text_color_gray">#797979</color>
+    <color name="text_color_list">#000000</color>
+
+
+
+
+
+    <color name="box_background">#f1f0f0</color>
+    <color name="pure_white">#FFF</color>
+    <color name="pure_white_80">#33ffffff</color>
+    <color name="pure_white_50">#80ffffff</color>
+    <color name="disable_text">#E2E2E2</color>
+    <color name="multi_line_text">#ededed</color>
+    <color name="attach_box_color">#FFE9E9E9</color>
+
+
+    <color name="btn_disable">#2b3036</color>
+    <color name="message_pending1">#8a000000</color>
+    <color name="pin_txt_color">#93000000</color>
+
+    <color name="border_color">#5d6770</color>
+    <color name="edt_border">#a6a6a6</color>
+    <color name="txt_blue">#037cff</color>
+    <color name="msg_bg1">#ffffff</color>
+    <color name="msg_bg_black1">#121a20</color>
+    <color name="msg_border_color1">#5d6771</color>
+    <color name="qr_bg">#0b141c</color>
+    <color name="home_btn_list_bg1">#141d24</color>
+    <color name="item_list_font_color">#404A52</color>
+    <color name="item_list_background">#F1F2F3</color>
+    <color name="sketch_black">#000000</color>
+
+    <color name="sketch_red">#ff0024</color>
+
+    <color name="sketch_blue">#0000ff</color>
+
+    <color name="update">#676767</color>
+    <color name="info_title_color">#9ca0b4</color>
+
+
+    <color name="btn_def_normal_color_gray1">#2a3036</color>
+    <color name="btn_def_normal_press_color_gray1">#495056</color>
+    <color name="btn_def_disable_color_gray1">#1b2228</color>
+
+    <color name="btn_action_press_color_gray1">#495056</color>
+    <color name="btn_action_normal_color_gray1">#414f5a</color>
+    <color name="btn_action_disable_color_gray1">#1e272f</color>
+
+    <color name="btn_submit_disable_color1">#9af33a38</color>
+    <color name="btn_submit_press1">#f96565</color>
+    <color name="btn_submit_normal_color1">#F33A38</color>
+
+
+    <color name="main_green_color">#00FF00</color>
+    <color name="main_red_color">#FF0000</color>
+    <color name="main_yellow_color">#FFCA01</color>
+    <color name="main_back_ground_color">#131A20</color>
+    <color name="main_white">#FFFFFF</color>
+    <color name="main_black">#000000</color>
+
+    <color name="main_back_ground_color1">#7F131A20</color>
+    <color name="main_red_color_transparent">#7FFF0000</color>
+</resources>

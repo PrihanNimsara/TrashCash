@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmOrderActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="10dp"
+                android:id="@+id/mcv_paper">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paper_price_for_kg"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentStart="true"
+                        android:textSize="10dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_available"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/tv_paper_price_for_kg"
+                        android:textSize="10dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField_paper_weight"
+                        android:layout_below="@+id/tv_paper_price_for_kg"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        android:layout_width="match_parent"
+
+
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+
+                        android:hint="@string/paper_weight">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tiet_paper_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:textSize="10dp"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bt_request_paper"
+                        android:text="@string/request"
+                        android:textSize="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_below="@+id/textField_paper_weight"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!-- plastic -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="10dp"
+                android:id="@+id/mcv_plastic"
+                android:layout_below="@+id/mcv_paper">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/plastic_price_for_kg"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentStart="true"
+                        android:textSize="10sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_available"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/tv_plastic_price_for_kg"
+                        android:textSize="10sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField_plastic_weight"
+                        android:layout_below="@+id/tv_plastic_price_for_kg"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        android:layout_width="match_parent"
+
+
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+
+                        android:hint="@string/plastic_weight">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tiet_plastic_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:textSize="10sp"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bt_request_plastic"
+                        android:text="@string/request"
+                        android:textSize="10sp"
+                        android:layout_margin="10dp"
+                        android:layout_below="@+id/textField_plastic_weight"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!-- metal -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="10dp"
+                android:id="@+id/mcv_metal"
+                android:layout_below="@+id/mcv_plastic">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/metal_price_for_kg"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentStart="true"
+                        android:textSize="10sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_available"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/tv_metal_price_for_kg"
+                        android:textSize="10sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField_metal_weight"
+                        android:layout_below="@+id/tv_metal_price_for_kg"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        android:layout_width="match_parent"
+
+
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+
+                        android:hint="@string/plastic_weight">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tiet_metal_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:textSize="10sp"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bt_request_metal"
+                        android:text="@string/request"
+                        android:textSize="10sp"
+                        android:layout_margin="10dp"
+                        android:layout_below="@+id/textField_metal_weight"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

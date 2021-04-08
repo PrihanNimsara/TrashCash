@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "729393514402",
+    "firebase_url": "https://greencountry-13f9a.firebaseio.com",
+    "project_id": "greencountry-13f9a",
+    "storage_bucket": "greencountry-13f9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729393514402:android:6ba8622f506e7b669a14fb",
+        "android_client_info": {
+          "package_name": "com.groupite.trashcash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729393514402-m7u3j2fjl3odcgkhk1rnekmokt7ropaa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP7McvnMxzUG94t5RMuMo8SNzcaxfKyjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729393514402-m7u3j2fjl3odcgkhk1rnekmokt7ropaa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

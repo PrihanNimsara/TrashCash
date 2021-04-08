@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">TrashCash</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Logout</string>
+
+    <string name="menu_home">Price Control</string>
+    <string name="menu_gallery">Orders</string>
+    <string name="menu_slideshow">Profile</string>
+    <string name="menu_buyer">Recycling Market</string>
+    <string name="menu_Calendar">Calendar</string>
+    <string name="menu_news">News</string>
+    <string name="menu_faq">FAQ</string>
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="user_type">User Type</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="seller">Seller</string>
+    <string name="buyer">Buyer</string>
+
+    <string name="login">Log In</string>
+    <string name="forgot">Forgot your password?</string>
+    <string name="signup">Sign Up</string>
+    <string name="new_user">New user? sign up</string>
+    <string name="sign_in_to">Sign in to continue</string>
+
+    <string name="paper_waste">Paper Waste</string>
+    <string name="plastic_waste">Plastic Waste</string>
+    <string name="Metal_waste">Metal Waste</string>
+
+    <string name="paper">Paper</string>
+    <string name="plastic">Plastic</string>
+    <string name="Metal">Metal</string>
+
+    <string name="weight">Weight (Kg) </string>
+    <string name="price_for_kg">Price for Kg (Rs) </string>
+    <string name="compensation_price">Compensation Price (Rs)</string>
+    <string name="price">Price (Rs) : </string>
+
+    <string name="paper_weight">Paper Weight (Kg) </string>
+    <string name="paper_price_for_kg">Paper Price for Kg (Rs) </string>
+    <string name="paper_compensation_price">Paper Compensation Price (Rs)</string>
+
+    <string name="plastic_weight">Plastic Weight (Kg) </string>
+    <string name="plastic_price_for_kg">Plastic Price for Kg (Rs) </string>
+    <string name="plastic_compensation_price">Plastic Compensation Price (Rs)</string>
+
+    <string name="metal_weight">Metal Weight (Kg) </string>
+    <string name="metal_price_for_kg">Metal Price for Kg (Rs) </string>
+    <string name="metal_compensation_price">Metal Compensation Price (Rs)</string>
+
+    <string name="update">Update</string>
+    <string name="save">Save</string>
+
+
+    <string name="not_available">N/A</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="request">Request</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="view">View</string>
+
+    <string name="buyer_name">Buyer Name :</string>
+    <string name="buyer_email">Buyer Email Address :</string>
+    <string name="buyer_phone_number">Buyer Phone No :</string>
+    <string name="buyer_address">Buyer Address</string>
+
+    <string name="seller_name">Seller Name :</string>
+    <string name="seller_email">Seller Email Address :</string>
+    <string name="seller_phone_number">Seller Phone No :</string>
+    <string name="seller_address">Seller Address</string>
+
+    <string name="total_weight">Total Weight (Kg) :</string>
+    <string name="total_price">Total Price (Rs) :</string>
+
+    <string name="type">Type :</string>
+    <string name="status">Status :</string>
+
+    <string name="call">Call</string>
+    <string name="end">Order Cancel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_to">Sign up to get the best experience</string>
+</resources>

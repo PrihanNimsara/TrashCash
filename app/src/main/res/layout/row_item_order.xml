@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:padding="5dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+
+        android:backgroundTint="@color/colorAccent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mcv_one"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="20dp"
+
+                android:backgroundTint="@color/light_g">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Buyer Details"
+
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_margin="10dp"
+
+                        android:id="@+id/tv_buyer_header"
+
+                        android:drawableStart="@drawable/ic_baseline_from"
+                        android:drawablePadding="10dp"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/buyer_name"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_buyer_header"
+                        android:id="@+id/tv_buyer_name_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_buyer_header"
+                        android:layout_toEndOf="@+id/tv_buyer_name_header"
+                        android:id="@+id/tv_buyer_name"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/buyer_email"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_buyer_name_header"
+                        android:id="@+id/tv_buyer_email_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_buyer_name"
+                        android:layout_toEndOf="@+id/tv_buyer_email_header"
+                        android:id="@+id/tv_buyer_email"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/buyer_phone_number"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_buyer_email_header"
+                        android:id="@+id/tv_buyer_phone_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_buyer_email"
+                        android:layout_toEndOf="@+id/tv_buyer_phone_header"
+                        android:id="@+id/tv_buyer_phone"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/buyer_address"
+
+
+                    android:textSize="12sp"
+                    android:textColor="@color/pure_black"
+
+                    android:layout_alignParentStart="true"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:layout_below="@+id/tv_buyer_phone_header"
+                    android:id="@+id/tv_buyer_address_header"
+                    />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:layout_below="@+id/tv_buyer_phone"
+                        android:layout_toEndOf="@+id/tv_buyer_address_header"
+                        android:id="@+id/tv_buyer_address"
+                        />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+
+                android:backgroundTint="@color/light_g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mcv_two"
+                android:layout_below="@id/mcv_one"
+
+                android:layout_margin="10dp"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Seller Details"
+
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_margin="10dp"
+
+                        android:id="@+id/tv_seller_header"
+
+                        android:drawableStart="@drawable/ic_baseline_to"
+                        android:drawablePadding="10dp"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/seller_name"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_seller_header"
+                        android:id="@+id/tv_seller_name_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_seller_header"
+                        android:layout_toEndOf="@+id/tv_seller_name_header"
+                        android:id="@+id/tv_seller_name"
+                        />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/seller_email"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_seller_name_header"
+                        android:id="@+id/tv_seller_email_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_seller_name"
+                        android:layout_toEndOf="@+id/tv_seller_email_header"
+                        android:id="@+id/tv_seller_email"
+                        />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/seller_phone_number"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_seller_email_header"
+                        android:id="@+id/tv_seller_phone_header"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_below="@+id/tv_seller_email_header"
+                        android:layout_toEndOf="@+id/tv_seller_phone_header"
+                        android:id="@+id/tv_seller_phone"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/seller_address"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:layout_below="@+id/tv_seller_phone_header"
+                        android:id="@+id/tv_seller_address_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:layout_below="@+id/tv_seller_phone"
+                        android:layout_toEndOf="@+id/tv_seller_address_header"
+                        android:id="@+id/tv_seller_address"
+                        />
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mcv_three"
+                android:layout_below="@id/mcv_two"
+
+                android:layout_margin="10dp"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Order Details"
+
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_margin="10dp"
+
+                        android:id="@+id/tv_order_header"
+
+                        android:drawableStart="@drawable/ic_baseline_order"
+                        android:drawablePadding="10dp"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/total_weight"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/tv_order_header"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+
+
+                        android:id="@+id/tv_total_weight_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tv_order_header"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+
+
+                        android:layout_toEndOf="@+id/tv_total_weight_header"
+                        android:id="@+id/tv_total_weight"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/total_price"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_below="@+id/tv_total_weight_header"
+
+                        android:id="@+id/tv_total_price_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_below="@+id/tv_total_weight"
+                        android:layout_toEndOf="@+id/tv_total_price_header"
+                        android:id="@+id/tv_total_price"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/type"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_below="@+id/tv_total_price_header"
+
+                        android:id="@+id/tv_ttype_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_below="@+id/tv_total_price"
+                        android:layout_toEndOf="@+id/tv_ttype_header"
+                        android:id="@+id/tv_ttype"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/status"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pure_black"
+
+                        android:layout_alignParentStart="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_below="@+id/tv_ttype_header"
+
+                        android:id="@+id/tv_status_header"
+                        />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/not_available"
+
+
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_below="@+id/tv_ttype"
+                        android:layout_toEndOf="@+id/tv_status_header"
+                        android:id="@+id/tv_status"
+                        />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/view"
+                android:textColor="@color/colorAccent"
+
+
+                android:textAllCaps="false"
+
+                android:backgroundTint="@color/colorPrimary"
+
+                android:layout_below="@+id/mcv_three"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
+
+                app:icon="@drawable/ic_baseline_pin_drop_24"
+                app:iconTint="@color/colorAccent"
+
+                android:gravity="center"
+                app:iconPadding="10dp"
+
+                android:id="@+id/bt_view"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
+
