@@ -50,6 +50,8 @@ public class HomeFragment extends Fragment {
         this.context = context;
 
         root = FirebaseDatabase.getInstance().getReference();
+
+
         paperDatabaseReference = root.child("paper");
         plasticDatabaseReference = root.child("plastic");
         metalDatabaseReference = root.child("metal");

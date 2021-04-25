@@ -27,7 +27,7 @@ public class OrderMetalDialog {
     TextView textViewMetalPrice;
     Button buttonApply, buttonCancel;
     Double totalPrice = null;
-   String totalWeightForDb = null;
+    String totalWeightForDb = null;
     DatabaseReference root;
     DatabaseReference orderDatabaseReference;
 

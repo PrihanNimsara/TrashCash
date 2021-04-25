@@ -23,6 +23,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -176,6 +179,9 @@ public class SignupActivity extends AppCompatActivity {
         firstName = textInputEditTextFirstName.getText().toString().trim();
         lastName = textInputEditTextLastName.getText().toString().trim();
         email = textInputEditTextEmail.getText().toString().trim();
+        if(!isEmailValid(email))
+            textInputLayoutEmail.setError("You need to enter a valid email");
+
         phone = textInputEditTextPhone.getText().toString().trim();
         address = textInputEditTextAddress.getText().toString().trim();
 
@@ -255,6 +261,24 @@ public class SignupActivity extends AppCompatActivity {
                 })
                 .show();
     }
+    public boolean isEmailValid(String email) {
+        String regExp =
+                "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                        +"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                        +"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                        +"([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";
 
+        CharSequence inputStr = email;
+
+        Pattern pattern = Pattern.compile(regExp,Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+
+        if(matcher.matches())
+            return true;
+        else
+            return false;
+    }
 
 }
