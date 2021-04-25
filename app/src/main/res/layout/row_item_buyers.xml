@@ -1,122 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:padding="5dp">
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+    app:strokeWidth="1dp"
+    app:cardElevation="2dp">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-
-        android:backgroundTint="@color/colorAccent">
-        <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <com.google.android.material.textview.MaterialTextView
-                android:scaleX="0.7"
-                android:scaleY="0.7"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/not_available"
-                android:id="@+id/tv_first_name"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/color_black_one"
-                android:layout_margin="10dp"
-
-                android:layout_alignParentStart="true"
-                android:drawableStart="@drawable/ic_baseline_profile_24"
-                android:drawablePadding="10dp"
-                />
-            <com.google.android.material.textview.MaterialTextView
-
-                android:scaleX="0.7"
-                android:scaleY="0.7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/not_available"
-                android:id="@+id/tv_email"
-                android:layout_below="@+id/tv_first_name"
-                android:textSize="18sp"
-                android:textColor="@color/colorFadeGray"
-
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="10dp"
+        <com.google.android.material.textview.MaterialTextView
 
 
-                android:layout_alignParentStart="true"
-                android:drawableStart="@drawable/email"
-                android:drawablePadding="10dp"/>
-            <com.google.android.material.textview.MaterialTextView
-                android:scaleX="0.7"
-                android:scaleY="0.7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/not_available"
-                android:id="@+id/tv_phone"
-                android:layout_below="@+id/tv_email"
-                android:textSize="18sp"
-                android:textColor="@color/btn_def_normal_color_gray"
-
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="10dp"
+            android:id="@+id/tv_first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/not_available"
+            android:textColor="@color/color_black_one"
+            android:textSize="12sp"
 
 
-                android:layout_alignParentStart="true"
-                android:drawableStart="@drawable/phone"
-                android:drawablePadding="10dp"/>
-            <com.google.android.material.textview.MaterialTextView
-                android:scaleX="0.7"
-                android:scaleY="0.7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/not_available"
-                android:id="@+id/tv_address"
-                android:layout_below="@+id/tv_phone"
-                android:textSize="18sp"
-                android:textColor="@color/color_black_two"
+            app:layout_constraintEnd_toStartOf="@+id/bt_apply"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/tv_email"
+            android:layout_width="0dp"
 
 
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
 
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="10dp"
+            android:text="@string/not_available"
 
-                android:layout_alignParentStart="true"
-                android:drawableStart="@drawable/address"
-                android:drawablePadding="10dp"/>
+            android:textColor="@color/colorFadeGray"
+
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/bt_apply"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_first_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_phone"
+
+            android:layout_width="0dp"
 
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_email"
+            android:layout_margin="10dp"
+            android:text="@string/not_available"
+            android:textColor="@color/btn_def_normal_color_gray"
+            android:textSize="12sp"
+
+            app:layout_constraintEnd_toStartOf="@+id/bt_apply"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+            android:layout_below="@+id/tv_phone"
+            android:layout_margin="10dp"
+            android:text="@string/not_available"
+            android:textColor="@color/color_black_two"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bt_apply"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone" />
+
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/apply"
+                android:textAllCaps="false"
                 android:id="@+id/bt_apply"
+                android:layout_margin="10dp"
 
+                android:textSize="12sp"
 
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="10dp"
-
-
-                android:layout_alignParentEnd="true"
-                android:backgroundTint="@color/colorPrimary"
-                android:textColor="@color/colorAccent"
-
-                app:icon="@drawable/ic_baseline_done_24"
-                app:iconTint="@color/colorAccent"
-
-                android:gravity="center"
-                app:iconPadding="10dp"
-                android:scaleX="0.7"
-                android:scaleY="0.7"
                 />
-        </RelativeLayout>
-    </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
