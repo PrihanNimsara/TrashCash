@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textViewName;
     TextView textViewEmail;
+    TextView textViewUserType;
 
     private AppBarConfiguration mAppBarConfiguration;
     NavigationView navigationView;
@@ -85,8 +86,12 @@ public class MainActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         textViewName = headerView.findViewById(R.id.tv_name);
         textViewEmail = headerView.findViewById(R.id.tv_email);
+        textViewUserType = headerView.findViewById(R.id.tv_user_type);
 
         String userType =  Kokis.getKokisString("user_type"," ");
+        textViewUserType.setText(userType.toString().trim());
+
+
         if(userType.equalsIgnoreCase(UserType.SELLER.toString())){
             navigationView.getMenu().findItem(R.id.nav_buyer).setVisible(true);
             navigationView.getMenu().findItem(R.id.nav_home).setVisible(false);
