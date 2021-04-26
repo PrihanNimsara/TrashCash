@@ -6,17 +6,17 @@ public class Paper {
     private String userId;
     private String userType;
     private String priceForKg;
-    private String compensationPrice;
+
 
     public Paper() {
     }
 
-    public Paper(String id, String userId, String userType, String priceForKg, String compensationPrice) {
+    public Paper(String id, String userId, String userType, String priceForKg) {
         this.id = id;
         this.userId = userId;
         this.userType = userType;
         this.priceForKg = priceForKg;
-        this.compensationPrice = compensationPrice;
+
     }
 
     public String getId() {
@@ -49,13 +49,5 @@ public class Paper {
 
     public void setPriceForKg(String priceForKg) {
         this.priceForKg = priceForKg;
-    }
-
-    public String getCompensationPrice() {
-        return compensationPrice;
-    }
-
-    public void setCompensationPrice(String compensationPrice) {
-        this.compensationPrice = compensationPrice;
     }
 }

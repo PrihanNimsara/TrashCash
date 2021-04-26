@@ -1,4 +1,4 @@
-package com.groupite.trashcash.utills.dialogs;
+package com.groupite.trashcash.helpers.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,7 +12,6 @@ import android.widget.EditText;
 
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.models.Paper;
-import com.groupite.trashcash.models.Plastic;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
-public class UpdatePlasticDialog {
+public class UpdatePaperDialog {
 
     EditText editTextPrice;
     EditText editTextCom;
@@ -30,7 +29,7 @@ public class UpdatePlasticDialog {
     Button buttonCancel;
 
     DatabaseReference root;
-    DatabaseReference plasticDatabaseReference;
+    DatabaseReference paperDatabaseReference;
 
 
 
@@ -39,21 +38,20 @@ public class UpdatePlasticDialog {
     String userId;
     String userType;
 
-    public void showPlasticDialog(Context context) {
+    public void showPaperDialog(Context context) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.setCancelable(false);
-        dialog.setContentView(R.layout.plastic_dialog_layout);
+        dialog.setContentView(R.layout.paper_dialog_layout);
 
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         root = FirebaseDatabase.getInstance().getReference();
-        plasticDatabaseReference = root.child("plastic");
+        paperDatabaseReference = root.child("paper");
 
 
-        editTextPrice = dialog.findViewById(R.id.tiet_plastic_price);
-        editTextCom = dialog.findViewById(R.id.tiet_plastic_com);
+        editTextPrice = dialog.findViewById(R.id.tiet_paper_price);
         buttonApply = dialog.findViewById(R.id.bt_apply);
         buttonCancel = dialog.findViewById(R.id.bt_cancel);
 
@@ -85,19 +83,19 @@ public class UpdatePlasticDialog {
         userType = Kokis.getKokisString("user_type", null);
 
         if (!TextUtils.isEmpty(price) && (!TextUtils.isEmpty(com) && !TextUtils.isEmpty(userId))) {
-            Query checkPaper = plasticDatabaseReference.orderByChild("userId").equalTo(userId);
+            Query checkPaper = paperDatabaseReference.orderByChild("userId").equalTo(userId);
 
             checkPaper.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
                     if (snapshot != null && snapshot.exists()) {
-                        Plastic plastic = null;
-                        for (DataSnapshot plasticSnapShot : snapshot.getChildren()) {
-                            plastic = plasticSnapShot.getValue(Plastic.class);
+                        Paper paper = null;
+                        for (DataSnapshot userSnapShot : snapshot.getChildren()) {
+                            paper = userSnapShot.getValue(Paper.class);
                             break;
                         }
-                        if (plastic != null)
-                            saveExistData(plastic);
+                        if (paper != null)
+                            saveExistData(paper);
                     } else {
                         saveNewData();
                     }
@@ -113,17 +111,17 @@ public class UpdatePlasticDialog {
 
 
     private void saveNewData() {
-        String id = plasticDatabaseReference.push().getKey();
+        String id = paperDatabaseReference.push().getKey();
         if (id != null) {
-            Paper paper = new Paper(id, userId, userType, price, com);
-            plasticDatabaseReference.child(id).setValue(paper);
+            Paper paper = new Paper(id, userId, userType, price);
+            paperDatabaseReference.child(id).setValue(paper);
         }
 
     }
 
-    private void saveExistData(Plastic plastic) {
-        plastic.setPriceForKg(price);
-        plastic.setCompensationPrice(com);
-        plasticDatabaseReference.child(plastic.getId()).setValue(plastic);
+    private void saveExistData(Paper paper) {
+        paper.setPriceForKg(price);
+
+        paperDatabaseReference.child(paper.getId()).setValue(paper);
     }
 }

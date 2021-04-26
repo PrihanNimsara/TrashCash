@@ -25,8 +25,8 @@
     <string name="user_type">User Type</string>
     <string name="user_name">User Name</string>
     <string name="password">Password</string>
-    <string name="seller">Seller</string>
-    <string name="buyer">Buyer</string>
+    <string name="client">Client</string>
+    <string name="agent">Agent</string>
 
     <string name="login">Log In</string>
     <string name="forgot">Forgot your password?</string>
@@ -43,7 +43,7 @@
     <string name="Metal">Metal</string>
 
     <string name="weight">Weight (Kg) </string>
-    <string name="price_for_kg">Price for Kg (Rs) </string>
+    <string name="price_for_kg">Price for 1 Kg (Rs) </string>
     <string name="compensation_price">Compensation Price (Rs)</string>
     <string name="price">Price (Rs) : </string>
 
@@ -56,7 +56,7 @@
     <string name="plastic_compensation_price">Plastic Compensation Price (Rs)</string>
 
     <string name="metal_weight">Metal Weight (Kg) </string>
-    <string name="metal_price_for_kg">Metal Price for Kg (Rs) </string>
+    <string name="metal_price_for_kg">Metal Price for 1 Kg (Rs) </string>
     <string name="metal_compensation_price">Metal Compensation Price (Rs)</string>
 
     <string name="update">Update</string>
@@ -95,4 +95,6 @@
     
     <string name="sign_up">Sign Up</string>
     <string name="sign_up_to">Sign up to get the best experience</string>
+
+    <string name="powered_by">Powered by Group IT E</string>
 </resources>

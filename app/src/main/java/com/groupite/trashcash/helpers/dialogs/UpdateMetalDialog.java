@@ -1,4 +1,4 @@
-package com.groupite.trashcash.utills.dialogs;
+package com.groupite.trashcash.helpers.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -49,7 +49,7 @@ public class UpdateMetalDialog {
         metalDatabaseReference = root.child("metal");
 
         editTextPrice = dialog.findViewById(R.id.tiet_metal_price);
-        editTextCom = dialog.findViewById(R.id.tiet_metal_com);
+
 
         buttonApply = dialog.findViewById(R.id.bt_apply);
         buttonCancel = dialog.findViewById(R.id.bt_cancel);
@@ -110,7 +110,7 @@ public class UpdateMetalDialog {
     private void saveNewData() {
         String id = metalDatabaseReference.push().getKey();
         if (id != null) {
-            Metal metal = new Metal(id, userId, userType, price, com);
+            Metal metal = new Metal(id, userId, userType, price);
             metalDatabaseReference.child(id).setValue(metal);
         }
 
@@ -118,7 +118,7 @@ public class UpdateMetalDialog {
 
     private void saveExistData(Metal metal) {
         metal.setPriceForKg(price);
-        metal.setCompensationPrice(com);
+
         metalDatabaseReference.child(metal.getId()).setValue(metal);
     }
 }

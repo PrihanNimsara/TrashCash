@@ -1,4 +1,4 @@
-package com.groupite.trashcash.utills.dialogs;
+package com.groupite.trashcash.helpers.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.groupite.trashcash.helpers.UserType;
 import com.groupite.trashcash.models.User;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -61,7 +62,7 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
+        customToolBar();
         init();
 
         root = FirebaseDatabase.getInstance().getReference();
@@ -256,5 +257,15 @@ public class SignupActivity extends AppCompatActivity {
                 .show();
     }
 
+    private void customToolBar(){
+        MaterialToolbar materialToolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(materialToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 }

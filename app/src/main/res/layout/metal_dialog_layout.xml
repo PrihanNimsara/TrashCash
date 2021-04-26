@@ -2,7 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+ >
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:backgroundTint="@color/conversation_list_item_back_color"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        app:strokeWidth="1dp"
+        app:cardElevation="2dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -16,7 +30,12 @@
 
         android:layout_margin="10dp"
 
-        android:hint="@string/metal_price_for_kg">
+        android:hint="@string/metal_price_for_kg"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_metal_price"
@@ -27,46 +46,36 @@
             android:inputType="numberDecimal"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField_metal_com"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-
-        android:layout_below="@+id/textField_metal_price"
-
-        android:layout_margin="10dp"
-
-        android:hint="@string/metal_compensation_price">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_metal_com"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:textSize="12sp"
-            android:inputType="numberDecimal"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.button.MaterialButton
+        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/bt_apply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/apply"
-        android:layout_below="@+id/textField_metal_com"
+
         android:layout_margin="10dp"
         android:layout_alignParentStart="true"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/bt_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/textField_metal_price"
         />
 
     <com.google.android.material.button.MaterialButton
+        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/bt_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cancel"
-        android:layout_below="@+id/textField_metal_com"
+
         android:layout_margin="10dp"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textField_metal_price"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>
 

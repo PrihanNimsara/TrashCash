@@ -1,4 +1,4 @@
-package com.groupite.trashcash.utills.dialogs;
+package com.groupite.trashcash.helpers.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.models.User;
-import com.groupite.trashcash.utills.MyDialogClickListener;
+import com.groupite.trashcash.helpers.MyDialogClickListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

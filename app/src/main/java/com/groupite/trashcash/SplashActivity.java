@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        textView = findViewById(R.id.version);
+//        textView = findViewById(R.id.version);
         handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -34,11 +34,11 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        int versionCode = BuildConfig.VERSION_CODE;
-        String versionName = BuildConfig.VERSION_NAME;
-        String x = Integer.toString(versionCode) + "." + versionName;
-
-        textView.setText(x);
+//        int versionCode = BuildConfig.VERSION_CODE;
+//        String versionName = BuildConfig.VERSION_NAME;
+//        String x = Integer.toString(versionCode) + "." + versionName;
+//
+//        textView.setText(x);
     }
 
     private void goToMainActivity(){

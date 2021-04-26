@@ -13,13 +13,14 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:padding="15dp"
+        android:src="@drawable/profile_image"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/colorAccent"/>
+        app:civ_border_color="@color/colorPrimary"/>
 
 
     <com.google.android.material.textview.MaterialTextView
@@ -35,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/na"
+        android:textSize="10sp"
        />
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_user_type"

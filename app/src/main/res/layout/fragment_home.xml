@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment"
-    android:background="@color/light_g">
+    tools:context=".ui.home.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,19 +14,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rl_buyer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             //paper
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mcv_icon_paper"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+
+                android:backgroundTint="@color/conversation_list_item_back_color"
                 android:layout_margin="10dp"
-                android:elevation="4dp"
-                app:cardCornerRadius="20dp">
-                <RelativeLayout
+                app:cardCornerRadius="5dp"
+                app:strokeWidth="1dp"
+                app:cardElevation="2dp"
+
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -36,22 +45,29 @@
                        android:layout_centerVertical="true"
                         android:layout_alignParentStart="true"
                         android:layout_margin="5dp"
-                        android:layout_width="60dp"
-                        android:layout_height="90dp"
-                        android:background="@drawable/paper"
-                        android:id="@+id/iv_paper"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/paper_icon"
+                        android:id="@+id/iv_paper"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
                     <TextView
-                        android:layout_width="match_parent"
+                        android:id="@+id/tv_paper_title"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="5dp"
+                        android:layout_toEndOf="@+id/iv_paper"
+                        android:gravity="center"
                         android:text="@string/paper_waste"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        android:layout_toEndOf="@+id/iv_paper"
-                        android:layout_margin="5dp"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center"
-                        android:id="@+id/tv_paper_title"
-                        />
+
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_paper"
+                        app:layout_constraintStart_toEndOf="@+id/iv_paper"
+                        app:layout_constraintTop_toTopOf="@+id/iv_paper" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -59,91 +75,93 @@
                         android:layout_toEndOf="@+id/iv_paper"
 
                         android:text="@string/price_for_kg"
-                        android:layout_margin="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
 
                         android:id="@+id/tv_paper_price"
 
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_paper_price"
-                        android:layout_toEndOf="@+id/iv_paper"
+                        android:textSize="12sp"
 
-                        android:text="@string/compensation_price"
-                        android:layout_margin="5dp"
 
-                        android:id="@+id/tv_paper_com"
-
-                        android:textSize="12sp"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_paper"/>
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_paper_title"
-
-
-                        android:text="@string/not_available"
-                        android:layout_margin="5dp"
-
                         android:id="@+id/tv_paper_price_result"
-
-                        android:textSize="12sp"
-
-                        android:layout_alignParentEnd="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_paper_price_result"
 
+
+                        android:layout_below="@+id/tv_paper_title"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
 
                         android:text="@string/not_available"
-                        android:layout_margin="5dp"
-
-                        android:id="@+id/tv_paper_com_result"
 
                         android:textSize="12sp"
 
-                        android:layout_alignParentEnd="true"/>
+                        app:layout_constraintEnd_toStartOf="@+id/bt_paper_update"
+                        app:layout_constraintStart_toEndOf="@+id/tv_paper_price"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_paper" />
+
 
                     <com.google.android.material.button.MaterialButton
+                        style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:text="@string/update"
                         android:textSize="10sp"
-                        android:layout_below="@+id/tv_paper_com_result"
+                        android:textAllCaps="false"
+
                         android:id="@+id/bt_paper_update"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="5dp"/>
-                </RelativeLayout>
+                        android:layout_margin="5dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
             //plastic
             <com.google.android.material.card.MaterialCardView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_icon_paper"
+
                 android:id="@+id/mcv_icon_plastic"
-                android:layout_below="@+id/mcv_icon_paper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:backgroundTint="@color/conversation_list_item_back_color"
                 android:layout_margin="10dp"
-                android:elevation="4dp"
-                app:cardCornerRadius="20dp">
-                <RelativeLayout
+                app:cardCornerRadius="5dp"
+                app:strokeWidth="1dp"
+                app:cardElevation="2dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+
                     >
                     <ImageView
                         android:layout_centerVertical="true"
                         android:layout_alignParentStart="true"
                         android:layout_margin="5dp"
-                        android:layout_width="60dp"
-                        android:layout_height="90dp"
-                        android:background="@drawable/plastic"
-                        android:id="@+id/iv_plastic"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/plastic_icon"
+                        android:id="@+id/iv_plastic"
+
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/plastic_waste"
                         android:textSize="12sp"
@@ -153,6 +171,11 @@
                         android:layout_centerHorizontal="true"
                         android:gravity="center"
                         android:id="@+id/tv_plastic_title"
+
+
+                        app:layout_constraintStart_toEndOf="@+id/iv_plastic"
+                        app:layout_constraintTop_toTopOf="@+id/iv_plastic"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_plastic"
                         />
 
                     <TextView
@@ -162,78 +185,75 @@
                         android:layout_toEndOf="@+id/iv_plastic"
 
                         android:text="@string/price_for_kg"
-                        android:layout_margin="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
 
                         android:id="@+id/tv_plastic_price"
 
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_plastic_price"
-                        android:layout_toEndOf="@+id/iv_plastic"
+                        android:textSize="12sp"
 
-                        android:text="@string/compensation_price"
-                        android:layout_margin="5dp"
-
-                        android:id="@+id/tv_plastic_com"
-
-                        android:textSize="12sp"/>
-
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_plastic"/>
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_plastic_title"
-
-
-                        android:text="@string/not_available"
-                        android:layout_margin="5dp"
-
                         android:id="@+id/tv_plastic_price_result"
-
-                        android:textSize="12sp"
-
-                        android:layout_alignParentEnd="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_plastic_price_result"
 
+
+                        android:layout_below="@+id/tv_plastic_title"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
 
                         android:text="@string/not_available"
-                        android:layout_margin="5dp"
-
-                        android:id="@+id/tv_plastic_com_result"
 
                         android:textSize="12sp"
 
-                        android:layout_alignParentEnd="true"/>
+                        app:layout_constraintEnd_toStartOf="@+id/bt_plastic_update"
+                        app:layout_constraintStart_toEndOf="@+id/tv_plastic_price"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_plastic" />
+
+
                     <com.google.android.material.button.MaterialButton
+                        style="?attr/materialButtonOutlinedStyle"
                         android:id="@+id/bt_plastic_update"
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:text="@string/update"
+                        android:textAllCaps="false"
                         android:textSize="10sp"
-                        android:layout_below="@+id/tv_plastic_com_result"
+
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="5dp"/>
-                </RelativeLayout>
+                        android:layout_margin="5dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
             //metal
             <com.google.android.material.card.MaterialCardView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_icon_plastic"
+
                 android:id="@+id/mcv_icon_metal"
-                android:layout_below="@+id/mcv_icon_plastic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:backgroundTint="@color/conversation_list_item_back_color"
                 android:layout_margin="10dp"
-                android:elevation="4dp"
-                app:cardCornerRadius="20dp">
-                <RelativeLayout
+                app:cardCornerRadius="5dp"
+                app:strokeWidth="1dp"
+                app:cardElevation="2dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -242,12 +262,16 @@
                         android:layout_centerVertical="true"
                         android:layout_alignParentStart="true"
                         android:layout_margin="5dp"
-                        android:layout_width="60dp"
-                        android:layout_height="90dp"
-                        android:background="@drawable/metal"
-                        android:id="@+id/iv_metal"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/metal_icon"
+                        android:id="@+id/iv_metal"
+
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Metal_waste"
                         android:textSize="12sp"
@@ -257,6 +281,11 @@
                         android:layout_centerHorizontal="true"
                         android:gravity="center"
                         android:id="@+id/tv_metal_title"
+
+
+                        app:layout_constraintStart_toEndOf="@+id/iv_metal"
+                        app:layout_constraintTop_toTopOf="@+id/iv_metal"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_metal"
                         />
 
                     <TextView
@@ -266,68 +295,63 @@
                         android:layout_toEndOf="@+id/iv_metal"
 
                         android:text="@string/price_for_kg"
-                        android:layout_margin="5dp"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
 
                         android:id="@+id/tv_metal_price"
 
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_metal_price"
-                        android:layout_toEndOf="@+id/iv_metal"
+                        android:textSize="12sp"
 
-                        android:text="@string/compensation_price"
-                        android:layout_margin="5dp"
 
-                        android:id="@+id/tv_metal_com"
-
-                        android:textSize="12sp"/>
-
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_metal"/>
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_metal_title"
-
-
-                        android:text="@string/not_available"
-                        android:layout_margin="5dp"
-
                         android:id="@+id/tv_metal_price_result"
-
-                        android:textSize="12sp"
-
-                        android:layout_alignParentEnd="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_metal_price_result"
 
+
+                        android:layout_below="@+id/tv_metal_title"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
 
                         android:text="@string/not_available"
-                        android:layout_margin="5dp"
-
-                        android:id="@+id/tv_metal_com_result"
 
                         android:textSize="12sp"
 
-                        android:layout_alignParentEnd="true"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/bt_metal_update"
+                        app:layout_constraintStart_toEndOf="@+id/tv_metal_price"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_metal" />
+
+
 
                     <com.google.android.material.button.MaterialButton
+                        style="?attr/materialButtonOutlinedStyle"
                         android:id="@+id/bt_metal_update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:text="@string/update"
+                        android:textAllCaps="false"
                         android:textSize="10sp"
-                        android:layout_below="@+id/tv_metal_com_result"
+
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="5dp"/>
-                </RelativeLayout>
+                        android:layout_margin="5dp"
+
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
