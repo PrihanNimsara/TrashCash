@@ -22,19 +22,14 @@ import com.google.firebase.database.ValueEventListener;
 import prihanofficial.com.kokis.logics.Kokis;
 
 public class UpdatePaperDialog {
-
     EditText editTextPrice;
-    EditText editTextCom;
     Button buttonApply;
     Button buttonCancel;
 
     DatabaseReference root;
     DatabaseReference paperDatabaseReference;
 
-
-
     String price;
-    String com;
     String userId;
     String userType;
 
@@ -78,11 +73,11 @@ public class UpdatePaperDialog {
     private void saveData() {
 
         price = editTextPrice.getText().toString();
-        com = editTextCom.getText().toString();
+
         userId = Kokis.getKokisString("user_id", null);
         userType = Kokis.getKokisString("user_type", null);
 
-        if (!TextUtils.isEmpty(price) && (!TextUtils.isEmpty(com) && !TextUtils.isEmpty(userId))) {
+        if (!TextUtils.isEmpty(price) && !TextUtils.isEmpty(userId)) {
             Query checkPaper = paperDatabaseReference.orderByChild("userId").equalTo(userId);
 
             checkPaper.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -121,7 +116,6 @@ public class UpdatePaperDialog {
 
     private void saveExistData(Paper paper) {
         paper.setPriceForKg(price);
-
         paperDatabaseReference.child(paper.getId()).setValue(paper);
     }
 }

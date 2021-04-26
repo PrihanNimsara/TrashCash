@@ -22,7 +22,7 @@ import prihanofficial.com.kokis.logics.Kokis;
 public class UpdateMetalDialog {
 
     EditText editTextPrice;
-    EditText editTextCom;
+
     Button buttonApply;
     Button buttonCancel;
 
@@ -32,7 +32,7 @@ public class UpdateMetalDialog {
 
 
     String price;
-    String com;
+
     String userId;
     String userType;
 
@@ -75,11 +75,11 @@ public class UpdateMetalDialog {
 
     private void saveData() {
         price = editTextPrice.getText().toString();
-        com = editTextCom.getText().toString();
+
         userId = Kokis.getKokisString("user_id", null);
         userType = Kokis.getKokisString("user_type", null);
 
-        if (!TextUtils.isEmpty(price) && (!TextUtils.isEmpty(com) && !TextUtils.isEmpty(userId))) {
+        if (!TextUtils.isEmpty(price) && !TextUtils.isEmpty(userId)) {
             Query checkMetal = metalDatabaseReference.orderByChild("userId").equalTo(userId);
 
             checkMetal.addListenerForSingleValueEvent(new ValueEventListener() {
