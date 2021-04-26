@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.groupite.trashcash.models.BuyerModel;
 import com.groupite.trashcash.models.Metal;
 import com.groupite.trashcash.models.Paper;
@@ -49,6 +50,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         buyerModel =  (BuyerModel) getIntent().getExtras().getSerializable("buyerModel");
 
         context = this;
+        customToolBar();
         init();
         root = FirebaseDatabase.getInstance().getReference();
         paperDatabaseReference = root.child("paper");
@@ -189,5 +191,19 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         editTextPaper = findViewById(R.id.tiet_paper_weight);
         editTextPlastic = findViewById(R.id.tiet_plastic_weight);
         editTextMetal = findViewById(R.id.tiet_metal_weight);
+    }
+
+
+
+    private void customToolBar(){
+        MaterialToolbar materialToolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(materialToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }

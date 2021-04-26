@@ -1,41 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ConfirmOrderActivity">
-
-    <ScrollView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+
+        app:liftOnScroll="true"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+
+
+
+
+            app:titleTextColor="@color/white"
+            app:subtitleTextColor="@color/white"
+
+
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+
+
+            android:id="@+id/topAppBar"
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
 
+            app:title="Add Price"
+            app:subtitle="Add price to product"
+
+
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        <!-- Here your ProgressBar -->
+
+        <ProgressBar
+            android:visibility="gone"
+            android:background="@color/colorPrimary"
+            android:id="@+id/progress"
+            android:layout_marginTop="-7dp"
+            android:layout_marginBottom="-7dp"
+            android:indeterminate="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:focusable="true"
+            android:focusableInTouchMode="true">
             <com.google.android.material.card.MaterialCardView
+
+                android:backgroundTint="@color/conversation_list_item_back_color"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:strokeWidth="1dp"
+                app:cardElevation="2dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="10dp"
-                android:id="@+id/mcv_paper">
 
-                <RelativeLayout
+                android:id="@+id/mcv_paper"
+
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/paper_price_for_kg"
                         android:layout_margin="10dp"
-                        android:layout_alignParentStart="true"
-                        android:textSize="10dp" />
+                        android:textSize="10dp"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
@@ -44,61 +108,96 @@
                         android:layout_margin="10dp"
                         android:layout_alignParentEnd="true"
                         android:id="@+id/tv_paper_price_for_kg"
-                        android:textSize="10dp" />
+                        android:textSize="10dp"
+
+
+                        app:layout_constraintStart_toEndOf="@+id/tv_details"
+
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textField_paper_weight"
-                        android:layout_below="@+id/tv_paper_price_for_kg"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                        android:layout_width="match_parent"
-
+                        android:layout_width="0dp"
 
                         android:layout_height="wrap_content"
 
+
+                        android:layout_below="@+id/tv_paper_price_for_kg"
+
                         android:layout_margin="10dp"
 
-                        android:hint="@string/paper_weight">
+                        android:hint="@string/paper_weight"
+
+                        app:layout_constraintEnd_toStartOf="@+id/bt_request_paper"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_paper_price_for_kg"
+                        app:layout_constraintBottom_toBottomOf="parent">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tiet_paper_weight"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
-                            android:textSize="10dp"
-                            android:inputType="numberDecimal" />
+                            android:inputType="numberDecimal"
+                            android:textSize="10dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
-                        android:layout_width="match_parent"
+                        style="?attr/materialButtonOutlinedStyle"
+
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/bt_request_paper"
+
                         android:text="@string/request"
+
                         android:textSize="10dp"
+                        android:textAllCaps="false"
+
                         android:layout_margin="10dp"
-                        android:layout_below="@+id/textField_paper_weight"/>
-                </RelativeLayout>
+
+
+
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
             <!-- plastic -->
             <com.google.android.material.card.MaterialCardView
+                android:backgroundTint="@color/conversation_list_item_back_color"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:strokeWidth="1dp"
+                app:cardElevation="2dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="10dp"
-                android:id="@+id/mcv_plastic"
-                android:layout_below="@+id/mcv_paper">
 
-                <RelativeLayout
+                android:id="@+id/mcv_plastic"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/mcv_paper">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/xx"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/plastic_price_for_kg"
                         android:layout_margin="10dp"
                         android:layout_alignParentStart="true"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
@@ -107,61 +206,91 @@
                         android:layout_margin="10dp"
                         android:layout_alignParentEnd="true"
                         android:id="@+id/tv_plastic_price_for_kg"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+
+
+                        app:layout_constraintStart_toEndOf="@+id/xx"
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textField_plastic_weight"
-                        android:layout_below="@+id/tv_plastic_price_for_kg"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                        android:layout_width="match_parent"
-
+                        android:layout_width="0dp"
 
                         android:layout_height="wrap_content"
 
+
+                        android:layout_below="@+id/tv_plastic_price_for_kg"
+
                         android:layout_margin="10dp"
 
-                        android:hint="@string/plastic_weight">
+                        android:hint="@string/plastic_weight"
+
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/bt_request_plastic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_plastic_price_for_kg">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tiet_plastic_weight"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
-                            android:textSize="10sp"
-                            android:inputType="numberDecimal" />
+                            android:inputType="numberDecimal"
+                            android:textSize="10sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
-                        android:layout_width="match_parent"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/bt_request_plastic"
                         android:text="@string/request"
+                       android:textAllCaps="false"
                         android:textSize="10sp"
                         android:layout_margin="10dp"
-                        android:layout_below="@+id/textField_plastic_weight"/>
-                </RelativeLayout>
+
+
+
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
             <!-- metal -->
             <com.google.android.material.card.MaterialCardView
+                android:backgroundTint="@color/conversation_list_item_back_color"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:strokeWidth="1dp"
+                app:cardElevation="2dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="10dp"
                 android:id="@+id/mcv_metal"
-                android:layout_below="@+id/mcv_plastic">
 
-                <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_plastic">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/xxx"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/metal_price_for_kg"
                         android:layout_margin="10dp"
                         android:layout_alignParentStart="true"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
@@ -170,41 +299,55 @@
                         android:layout_margin="10dp"
                         android:layout_alignParentEnd="true"
                         android:id="@+id/tv_metal_price_for_kg"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/xxx"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textField_metal_weight"
-                        android:layout_below="@+id/tv_metal_price_for_kg"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                        android:layout_width="match_parent"
-
+                        android:layout_width="0dp"
 
                         android:layout_height="wrap_content"
 
+
+                        android:layout_below="@+id/tv_metal_price_for_kg"
+
                         android:layout_margin="10dp"
 
-                        android:hint="@string/plastic_weight">
+                        android:hint="@string/plastic_weight"
+
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/bt_request_metal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_metal_price_for_kg">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tiet_metal_weight"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
-                            android:textSize="10sp"
-                            android:inputType="numberDecimal" />
+                            android:inputType="numberDecimal"
+                            android:textSize="10sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
-                        android:layout_width="match_parent"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/bt_request_metal"
                         android:text="@string/request"
                         android:textSize="10sp"
                         android:layout_margin="10dp"
-                        android:layout_below="@+id/textField_metal_weight"/>
-                </RelativeLayout>
+                        android:layout_below="@+id/textField_metal_weight"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -14,38 +14,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RelativeLayout
+            android:layout_height="wrap_content"
+            android:id="@+id/x">
+
+            <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/x"
-              >
+                android:layout_height="100dp"
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_margin="30dp"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/iv_logo"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_bottom_corners"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                    android:src="@drawable/a"
-                    app:civ_border_width="2dp"
-                    app:civ_border_color="@color/pure_black"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="30dp"
+
+                android:src="@drawable/profile_image"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="2dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"/>
 
 
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_below="@+id/iv_logo"
+
                     android:layout_margin="10dp"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/textFieldOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name">
+                    android:hint="Name"
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_logo">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:editable="false"
@@ -59,11 +74,12 @@
 
                 <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_below="@+id/textFieldOne"
 
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldOne"
+
+                    android:layout_margin="10dp"
 
 
                     android:layout_centerHorizontal="true"
@@ -83,11 +99,12 @@
 
                 <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_below="@+id/textFieldTWO"
 
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldTWO"
+
+                    android:layout_margin="10dp"
 
 
                     android:layout_centerHorizontal="true"
@@ -107,12 +124,12 @@
 
                 <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_below="@+id/textFieldThree"
 
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldThree"
 
+                    android:layout_margin="10dp"
 
                     android:layout_centerHorizontal="true"
                     android:id="@+id/textFieldFour"
@@ -132,11 +149,12 @@
 
                 <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_below="@+id/textFieldFour"
 
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldFour"
+
+                    android:layout_margin="10dp"
 
 
                     android:layout_centerHorizontal="true"
@@ -155,11 +173,12 @@
 
                 <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_below="@+id/textFieldFive"
 
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldFive"
+
+                    android:layout_margin="10dp"
 
 
                     android:layout_centerHorizontal="true"
@@ -181,16 +200,20 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldSix"
                     android:id="@+id/bt_update"
-                    android:layout_width="match_parent"
+
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textFieldSix"
+
                     android:layout_centerHorizontal="true"
                     android:layout_margin="10dp"
                     android:text="@string/update"
+                    android:textAllCaps="false"
                     android:textSize="12sp" />
 
-            </RelativeLayout>
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
