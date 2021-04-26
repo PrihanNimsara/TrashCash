@@ -1,4 +1,4 @@
-package com.groupite.trashcash.ui.gallery;
+package com.groupite.trashcash.ui.orders;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
-public class GalleryFragment extends Fragment {
+public class OrdersFragment extends Fragment {
 
     DatabaseReference root;
     DatabaseReference orderDatabaseReference;
@@ -48,7 +48,7 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        View root = inflater.inflate(R.layout.fragment_orders, container, false);
         listView = (ListView) root.findViewById(R.id.list);
 
         String userType = Kokis.getKokisString("user_type", " ");

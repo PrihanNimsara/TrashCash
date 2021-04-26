@@ -3,44 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_gallery">
+    app:startDestination="@+id/nav_orders">
 
     <!-- orders -->
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.groupite.trashcash.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_orders"
+        android:name="com.groupite.trashcash.ui.orders.OrdersFragment"
+        android:label="@string/menu_orders"
+        tools:layout="@layout/fragment_orders" />
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.groupite.trashcash.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_price"
+        android:name="com.groupite.trashcash.ui.price.PriceFragment"
+        android:label="@string/menu_price"
+        tools:layout="@layout/fragment_price" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.groupite.trashcash.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_profile"
+        android:name="com.groupite.trashcash.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/nav_buyer"
-        android:name="com.groupite.trashcash.ui.buyer.BuyerFragment"
-        android:label="@string/menu_buyer"
-        tools:layout="@layout/fragment_buyer" />
+        android:id="@+id/nav_agents"
+        android:name="com.groupite.trashcash.ui.agents.AgentsFragment"
+        android:label="@string/menu_agents"
+        tools:layout="@layout/fragment_agents" />
     <fragment
         android:id="@+id/nav_news"
         android:name="com.groupite.trashcash.ui.news.NewsFragment"
-        android:label="fragment_news"
+        android:label="@string/menu_news"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/nav_calendar"
         android:name="com.groupite.trashcash.ui.calendar.CalendarFragment"
-        android:label="fragment_calendar"
+        android:label="@string/menu_Calendar"
         tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/nav_faq"
         android:name="com.groupite.trashcash.ui.faq.FaqFragment"
-        android:label="fragment_faq"
+        android:label="@string/menu_faq"
         tools:layout="@layout/fragment_faq" />
 </navigation>

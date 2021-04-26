@@ -1,4 +1,4 @@
-package com.groupite.trashcash.ui.buyer;
+package com.groupite.trashcash.ui.agents;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import prihanofficial.com.kokis.logics.Kokis;
 
 
-public class BuyerFragment extends Fragment {
+public class AgentsFragment extends Fragment {
 
     DatabaseReference root;
     DatabaseReference userDatabaseReference,paperDatabaseReference, plasticDatabaseReference, metalDatabaseReference;
@@ -48,7 +48,7 @@ public class BuyerFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_buyer, container, false);
+        View root = inflater.inflate(R.layout.fragment_agents, container, false);
 
       String userType = Kokis.getKokisString("user_type", " ");
 if( userType.equalsIgnoreCase(UserType.SELLER.toString())) {

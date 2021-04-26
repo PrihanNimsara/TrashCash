@@ -1,4 +1,4 @@
-package com.groupite.trashcash.ui.slideshow;
+package com.groupite.trashcash.ui.profile;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
-public class SlideshowFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     TextView textViewFirstName, textViewLastName, textViewEmail, textViewPhone, textViewAddress, textViewUserName, textViewPassword;
     Button buttonUpdate;
@@ -50,7 +50,7 @@ public class SlideshowFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        View root = inflater.inflate(R.layout.fragment_profile, container, false);
         init(root);
 
            buttonUpdate.setOnClickListener(new View.OnClickListener() {

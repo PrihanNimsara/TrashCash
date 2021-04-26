@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_buyer,R.id.nav_calendar,R.id.nav_news,R.id.nav_faq)
+                R.id.nav_price, R.id.nav_orders, R.id.nav_profile,R.id.nav_agents,R.id.nav_calendar,R.id.nav_news,R.id.nav_faq)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -93,11 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(userType.equalsIgnoreCase(UserType.SELLER.toString())){
-            navigationView.getMenu().findItem(R.id.nav_buyer).setVisible(true);
-            navigationView.getMenu().findItem(R.id.nav_home).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_agents).setVisible(true);
+            navigationView.getMenu().findItem(R.id.nav_price).setVisible(false);
         }else {
-            navigationView.getMenu().findItem(R.id.nav_buyer).setVisible(false);
-            navigationView.getMenu().findItem(R.id.nav_home).setVisible(true);
+            navigationView.getMenu().findItem(R.id.nav_agents).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_price).setVisible(true);
         }
     }
 

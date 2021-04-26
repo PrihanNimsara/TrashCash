@@ -1,4 +1,4 @@
-package com.groupite.trashcash.ui.home;
+package com.groupite.trashcash.ui.price;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
-public class HomeFragment extends Fragment {
+public class PriceFragment extends Fragment {
 
     Button buttonPaperUpdate;
     Button buttonPlasticUpdate;
@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_price, container, false);
         init(root);
 
         buttonPaperUpdate.setOnClickListener(new View.OnClickListener() {

@@ -9,10 +9,10 @@
 
     <string name="na">N/A</string>
 
-    <string name="menu_home">Price Control</string>
-    <string name="menu_gallery">Orders</string>
-    <string name="menu_slideshow">Profile</string>
-    <string name="menu_buyer">Recycling Market</string>
+    <string name="menu_price">Price</string>
+    <string name="menu_orders">Orders</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_agents">Agents</string>
     <string name="menu_Calendar">Calendar</string>
     <string name="menu_news">News</string>
     <string name="menu_faq">FAQ</string>
