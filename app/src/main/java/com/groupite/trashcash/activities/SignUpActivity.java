@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -26,7 +30,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class SignupActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     TextInputLayout textInputLayoutFirstName;
     TextInputLayout textInputLayoutLastName;
@@ -172,6 +176,175 @@ public class SignupActivity extends AppCompatActivity {
         buttonSignUp = findViewById(R.id.bt_signup);
 
         userType = UserType.SELLER.toString();
+
+
+
+        textInputEditTextFirstName.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+                if(!s.toString().trim().isEmpty()){
+                    if (count<3){
+                        textInputLayoutFirstName.setError("Pleas enter valid First Name");
+                    }else {
+                        textInputLayoutFirstName.setError(null);
+                    }
+                }else {
+                    textInputLayoutFirstName.setError(null);
+                }
+
+
+            }
+        });
+
+
+        textInputEditTextLastName.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+                if(!s.toString().trim().isEmpty()){
+                    if (count<3){
+                        textInputLayoutLastName.setError("Pleas enter valid Last Name");
+                    }else {
+                        textInputLayoutLastName.setError(null);
+                    }
+                }else {
+                    textInputLayoutLastName.setError(null);
+                }
+            }
+        });
+
+        textInputEditTextEmail.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+               if (!s.toString().trim().isEmpty()){
+                   if (isValidEmailAddress(s.toString().trim())){
+                       textInputLayoutEmail.setError(null);
+                   }else {
+                       textInputLayoutEmail.setError("invalid email address");
+                   }
+               }else {
+                   textInputLayoutEmail.setError(null);
+               }
+            }
+        });
+
+        textInputEditTextPhone.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                if (!s.toString().trim().isEmpty()){
+                    if (isValidMobile(s.toString().trim())){
+                        textInputLayoutPhone.setError(null);
+                    }else {
+                        textInputLayoutPhone.setError("invalid phone number");
+                    }
+                }else {
+                    textInputLayoutPhone.setError(null);
+                }
+            }
+        });
+
+        textInputEditTextAddress.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+                if(!s.toString().trim().isEmpty()){
+                    if (s.toString().trim().length() < 3){
+                        textInputLayoutAddress.setError("Pleas enter valid address");
+                    }else {
+                        textInputLayoutAddress.setError(null);
+                    }
+                }else {
+                    textInputLayoutAddress.setError(null);
+                }
+            }
+        });
+
+
+        textInputEditTextUserName.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+                if(!s.toString().trim().isEmpty()){
+                    if (s.toString().trim().length()<3){
+                        textInputLayoutUserName.setError("Pleas enter valid username");
+                    }else {
+                        isValidUserName(s.toString().trim());
+                    }
+                }else {
+                    textInputLayoutUserName.setError(null);
+                }
+
+
+            }
+        });
+
+        textInputEditTextPassword.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                if (!s.toString().trim().isEmpty()){
+                    if (isValidPassword(s.toString().trim())){
+                        textInputLayoutPassword.setError(null);
+                    }else {
+                        textInputLayoutPassword.setError("invalid email password");
+                    }
+                }else {
+                    textInputLayoutPassword.setError(null);
+                }
+            }
+        });
+
+
+
     }
 
     private void saveSignUpDetails() {
@@ -202,6 +375,7 @@ public class SignupActivity extends AppCompatActivity {
             saveData();
         }
     }
+
 
 
     private void saveData() {
@@ -240,7 +414,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void showDialog(){
-        new MaterialAlertDialogBuilder(SignupActivity.this)
+        new MaterialAlertDialogBuilder(SignUpActivity.this)
                 .setTitle("Sign Up")
                 .setMessage("Are you sure you want to continue ? ")
                 .setPositiveButton("GOT IT", new DialogInterface.OnClickListener() {
@@ -268,5 +442,58 @@ public class SignupActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return super.onSupportNavigateUp();
+    }
+
+    private Boolean isValidMobile(String phone) {
+        Boolean status = false;
+        if(phone.length() == 10){
+            status = true;
+        }
+        return status;
+    }
+
+    private Boolean isValidPassword(String password ){
+        Boolean status = false;
+        if(password.length()>= 6 && password.length()<30){
+            status = true;
+        }
+        return status;
+    }
+
+    private Boolean isValidEmailAddress(String email){
+        Boolean status = false;
+        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            status = true;
+        }
+        return  status;
+    }
+
+    private void isValidUserName(String username){
+        Query checkUser = userDatabaseReference.orderByChild("userName").equalTo(username);
+
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot != null && snapshot.exists()) {
+                    //user available
+                    textInputLayoutUserName.setError("1111");
+
+                    Log.d("fuck","fuck1");
+                } else {
+                    //user not available
+                    textInputLayoutUserName.setError(null);
+                    Log.d("fuck","fuck2");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                textInputLayoutUserName.setError("1111");
+                Log.d("fuck","fuck3");
+            }
+        });
+
+
     }
 }
