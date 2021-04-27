@@ -1,6 +1,8 @@
 package com.groupite.trashcash.models;
 
-public class Plastic {
+import java.io.Serializable;
+
+public class Plastic implements Serializable {
     private String id;
 
     private String userId;

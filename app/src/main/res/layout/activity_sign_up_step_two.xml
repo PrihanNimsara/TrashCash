@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.sign_up.SignUpStepTwoActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+
+        app:liftOnScroll="true"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+
+
+
+
+            app:titleTextColor="@color/white"
+            app:subtitleTextColor="@color/white"
+
+
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+
+
+            android:id="@+id/topAppBar"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+
+            app:title="@string/sign_up"
+            app:subtitle="@string/sign_up_two"
+
+
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        <!-- Here your ProgressBar -->
+
+        <ProgressBar
+            android:visibility="gone"
+            android:background="@color/colorPrimary"
+            android:id="@+id/progress"
+            android:layout_marginTop="-7dp"
+            android:layout_marginBottom="-7dp"
+            android:indeterminate="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Note: A RecyclerView can also be used -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+            <!-- email -->
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/email"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                android:id="@+id/til_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:id="@+id/tiet_email"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- phone -->
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/til_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/phone"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+
+                app:errorEnabled="true"
+                app:endIconMode="clear_text"
+                android:id="@+id/til_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:id="@+id/tiet_phone"
+                    android:inputType="phone"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- address -->
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/til_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/address"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+
+                app:endIconMode="clear_text"
+                android:id="@+id/til_address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:id="@+id/tiet_address" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- type -->
+            <RadioGroup
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/til_address"
+                android:id="@+id/rg_user_type"
+                android:checkedButton="@+id/r_user_type_seller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                >
+                <RadioButton
+                    android:id="@+id/r_user_type_seller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/client"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="12sp"
+                    />
+                <RadioButton
+                    android:id="@+id/r_user_type_buyer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="12sp"/>
+            </RadioGroup>
+            <!-- signup -->
+            <com.google.android.material.button.MaterialButton
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rg_user_type"
+                android:id="@+id/bt_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signup"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

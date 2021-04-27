@@ -1,6 +1,8 @@
 package com.groupite.trashcash.models;
 
-public class Metal {
+import java.io.Serializable;
+
+public class Metal implements Serializable {
     private String id;
 
     private String userId;

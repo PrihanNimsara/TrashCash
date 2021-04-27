@@ -1,6 +1,8 @@
 package com.groupite.trashcash.models;
 
-public class Paper {
+import java.io.Serializable;
+
+public class Paper implements Serializable {
     private String id;
 
     private String userId;

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.groupite.trashcash.R;
+import com.groupite.trashcash.activities.sign_up.SignUpStepOneActivity;
 import com.groupite.trashcash.helpers.NetworkChangeReceiver;
 import com.groupite.trashcash.models.User;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
@@ -154,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void openSignUpActivity(){
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, SignUpStepOneActivity.class);
         startActivity(intent);
     }
 

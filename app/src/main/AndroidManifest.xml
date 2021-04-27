@@ -21,9 +21,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.OrderDetaillsActivity"
+        <activity android:name=".activities.sign_up.SignUpSuccessActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.sign_up.SignUpStepTwoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.OrderDetaillsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -39,9 +47,8 @@
         <activity
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps"
-
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.ConfirmOrderActivity"
             android:screenOrientation="portrait"
@@ -51,7 +58,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Login" />
         <activity
-            android:name=".activities.SignUpActivity"
+            android:name=".activities.sign_up.SignUpStepOneActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Login" />
         <activity

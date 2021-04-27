@@ -31,6 +31,7 @@
     <string name="login">Log In</string>
     <string name="forgot">Forgot your password?</string>
     <string name="signup">Sign Up</string>
+    <string name="next">Next</string>
     <string name="new_user">New user? sign up</string>
     <string name="sign_in_to">Sign in to continue</string>
 
@@ -62,15 +63,18 @@
     <string name="update">Update</string>
     <string name="save">Save</string>
 
+    <string name="can_not_be">can not be empty</string>
 
     <string name="not_available">N/A</string>
     <string name="apply">Apply</string>
-
+    <string name="well_done">Well Done</string>
+    <string name="your_profile_is">Your profile has been created.</string>
     <string name="cancel">Cancel</string>
     <string name="request">Request</string>
     <string name="title_activity_maps">Map</string>
 
     <string name="view">View</string>
+    <string name="back_to_login">Back to Login</string>
 
     <string name="buyer_name">Buyer Name :</string>
     <string name="buyer_email">Buyer Email Address :</string>
@@ -88,6 +92,7 @@
     <string name="type">Type :</string>
     <string name="status">Status :</string>
 
+
     <string name="call">Call</string>
     <string name="end">Order Cancel</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -96,13 +101,16 @@
 
     <string name="sign_up">Sign Up</string>
     <string name="order_details">Order details</string>
-    <string name="sign_up_to">Sign up to get the best experience</string>
+    <string name="sign_up_one">Step One</string>
+    <string name="sign_up_two">Step Two</string>
 
     <string name="powered_by">Powered by Group IT E</string>
-    
+
     <string name="name">Name:</string>
     <string name="city">City:</string>
     <string name="email_address">Email:</string>
     <string name="phone_no">Phone:</string>
+
+    <string name="some_thing">Something went wrong, please try again</string>
 
 </resources>
