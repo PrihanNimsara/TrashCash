@@ -1,4 +1,4 @@
-package com.groupite.trashcash;
+package com.groupite.trashcash.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.groupite.trashcash.R;
+import com.groupite.trashcash.activities.LoginActivity;
 import com.groupite.trashcash.helpers.UserType;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void actionLogout(){
         Kokis.setKokisBoolean("isLogged",false);
-        Intent intent = new Intent(this,LoginActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         finishAffinity();
         startActivity(intent);

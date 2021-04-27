@@ -1,6 +1,8 @@
 package com.groupite.trashcash.models;
 
-public class Order {
+import java.io.Serializable;
+
+public class Order implements Serializable {
     String id;
 
     String buyerId;

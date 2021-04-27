@@ -1,4 +1,4 @@
-package com.groupite.trashcash;
+package com.groupite.trashcash.activities;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.UserType;
 import com.groupite.trashcash.models.User;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;

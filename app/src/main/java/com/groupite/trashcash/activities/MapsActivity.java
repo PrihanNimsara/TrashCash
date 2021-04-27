@@ -1,5 +1,6 @@
-package com.groupite.trashcash;
+package com.groupite.trashcash.activities;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Context;
@@ -11,8 +12,11 @@ import android.location.LocationListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
+import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.RequestStatus;
 import com.groupite.trashcash.helpers.UserType;
 import com.groupite.trashcash.models.Order;
@@ -36,7 +40,7 @@ import java.util.List;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap sellerMap;
     private GoogleMap buyerMapMap;
@@ -47,7 +51,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String buyerPhone = " ";
     private String orderId = " ";
 
-    ExtendedFloatingActionButton buttonCall, buttonEnd;
+    Button buttonCall, buttonEnd;
 
     DatabaseReference root;
     DatabaseReference orderDatabaseReference;
@@ -56,6 +60,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        customToolBar();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         root = FirebaseDatabase.getInstance().getReference();
         orderDatabaseReference = root.child("order");
@@ -229,5 +236,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          order.setStatus(RequestStatus.INACTIVE.toString());
          orderDatabaseReference.child(orderId).setValue(order);
          Toast.makeText(this, "successfully updated  ", Toast.LENGTH_SHORT).show();
+    }
+
+    private void customToolBar(){
+        MaterialToolbar materialToolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(materialToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }

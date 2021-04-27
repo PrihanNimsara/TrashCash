@@ -11,14 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.groupite.trashcash.ConfirmOrderActivity;
+import com.groupite.trashcash.activities.ConfirmOrderActivity;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.models.BuyerModel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CustomAdapter extends ArrayAdapter<BuyerModel> implements View.OnClickListener{
+public class AgentsAdapter extends ArrayAdapter<BuyerModel> implements View.OnClickListener{
 
 private ArrayList<BuyerModel> dataSet;
         Context mContext;
@@ -29,8 +29,8 @@ private static class ViewHolder {
     Button buttonApply;
 }
 
-    public CustomAdapter(ArrayList<BuyerModel> data, Context context) {
-        super(context, R.layout.row_item_buyers, data);
+    public AgentsAdapter(ArrayList<BuyerModel> data, Context context) {
+        super(context, R.layout.row_item_agents, data);
         this.dataSet = data;
         this.mContext=context;
 
@@ -67,7 +67,7 @@ private static class ViewHolder {
 
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.row_item_buyers, parent, false);
+            convertView = inflater.inflate(R.layout.row_item_agents, parent, false);
             viewHolder.textViewFirstName = convertView.findViewById(R.id.tv_first_name);
             viewHolder.textViewEmail = convertView.findViewById(R.id.tv_email);
             viewHolder.textViewPhone =  convertView.findViewById(R.id.tv_phone);

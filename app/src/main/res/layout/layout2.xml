@@ -165,8 +165,8 @@
             android:layout_height="wrap_content"
             android:text="@string/view"
             android:textAllCaps="false"
-            android:id="@+id/bt_view"
-            android:layout_marginRight="10dp"
+            android:id="@+id/bt_apply"
+           android:layout_marginRight="10dp"
 
             android:textSize="12sp"
 

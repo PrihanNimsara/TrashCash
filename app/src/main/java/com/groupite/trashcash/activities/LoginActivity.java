@@ -1,4 +1,4 @@
-package com.groupite.trashcash;
+package com.groupite.trashcash.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.NetworkChangeReceiver;
 import com.groupite.trashcash.models.User;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
@@ -143,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
           Kokis.setKokisString("user_id",user.getId());
           Kokis.setKokisString("user_type",user.getUserType());
 
-          Intent intent = new Intent(this,MainActivity.class);
+          Intent intent = new Intent(this, MainActivity.class);
           startActivity(intent);
           finish();
 
@@ -153,7 +154,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void openSignUpActivity(){
-        Intent intent = new Intent(this,SignupActivity.class);
+        Intent intent = new Intent(this, SignupActivity.class);
         startActivity(intent);
     }
 

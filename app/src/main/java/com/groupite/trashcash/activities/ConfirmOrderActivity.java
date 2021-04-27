@@ -1,4 +1,4 @@
-package com.groupite.trashcash;
+package com.groupite.trashcash.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.groupite.trashcash.R;
 import com.groupite.trashcash.models.BuyerModel;
 import com.groupite.trashcash.models.Metal;
 import com.groupite.trashcash.models.Paper;

@@ -1,4 +1,4 @@
-package com.groupite.trashcash;
+package com.groupite.trashcash.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
+
+import com.groupite.trashcash.R;
+import com.groupite.trashcash.activities.LoginActivity;
+import com.groupite.trashcash.activities.MainActivity;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
@@ -43,11 +47,11 @@ public class SplashActivity extends AppCompatActivity {
 
     private void goToMainActivity(){
       if(Kokis.kgetKokisBoolean("isLogged",false)){
-          Intent intent = new Intent(this,MainActivity.class);
+          Intent intent = new Intent(this, MainActivity.class);
           startActivity(intent);
           finish();
       }else {
-          Intent intent = new Intent(this,LoginActivity.class);
+          Intent intent = new Intent(this, LoginActivity.class);
           startActivity(intent);
           finish();
       }

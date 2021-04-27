@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.UserType;
-import com.groupite.trashcash.helpers.adapters.CustomAdapter;
+import com.groupite.trashcash.helpers.adapters.AgentsAdapter;
 import com.groupite.trashcash.models.BuyerModel;
 import com.groupite.trashcash.models.User;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -35,7 +35,7 @@ public class AgentsFragment extends Fragment {
 
     ArrayList<BuyerModel> dataModels;
     ListView listView;
-    private static CustomAdapter adapter;
+    private static AgentsAdapter adapter;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -111,7 +111,7 @@ if( userType.equalsIgnoreCase(UserType.SELLER.toString())) {
     }
 
     private void setDataToList(){
-        adapter= new CustomAdapter(dataModels,context);
+        adapter= new AgentsAdapter(dataModels,context);
         listView.setAdapter(adapter);
     }
 
