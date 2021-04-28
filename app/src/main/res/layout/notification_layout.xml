@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+               android:layout_centerVertical="true"
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:layout_margin="10dp"
+
+                android:id="@+id/imageView_notification"
+                android:src="@drawable/logo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_title_notification"
+                android:layout_toEndOf="@+id/imageView_notification"
+
+               android:layout_margin="5dp"
+                android:text="@string/not_available"
+
+                android:textColor="@color/main_black"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_message_notification"
+                android:layout_toEndOf="@+id/imageView_notification"
+                android:layout_below="@+id/tv_title_notification"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/not_available"
+
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+               />
+        </RelativeLayout>
+</RelativeLayout>
