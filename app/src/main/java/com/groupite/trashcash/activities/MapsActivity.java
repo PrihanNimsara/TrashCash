@@ -93,7 +93,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View view) {
                 String userType = Kokis.getKokisString("user_type", " ");
 
-                if (userType.equalsIgnoreCase(UserType.BUYER.toString())) {
+                if (userType.equalsIgnoreCase(UserType.AGENT.toString())) {
                     Intent intent = new Intent(Intent.ACTION_DIAL);
                     intent.setData(Uri.parse("tel:" + buyerPhone));
                     startActivity(intent);

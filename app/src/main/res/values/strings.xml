@@ -112,5 +112,6 @@
     <string name="phone_no">Phone:</string>
 
     <string name="some_thing">Something went wrong, please try again</string>
+    <string name="success_create">Order Created</string>
 
 </resources>

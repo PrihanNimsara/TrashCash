@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.groupite.trashcash.OrderCreateSuccess;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.RequestStatus;
 import com.groupite.trashcash.helpers.WasteType;
@@ -25,13 +26,16 @@ import prihanofficial.com.kokis.logics.Kokis;
 
 public class OrderMetalDialog {
     TextView textViewMetalPrice;
-    Button buttonApply, buttonCancel;
+    Button buttonApply;
+    Button buttonCancel;
     Double totalPrice = null;
-   String totalWeightForDb = null;
+    String totalWeightForDb = null;
     DatabaseReference root;
     DatabaseReference orderDatabaseReference;
 
-    public void showOrderMetalDialog(Context context, String weight, String priceForKg,final String buyerId, final BuyerModel buyerModel) {
+    OrderCreateSuccess orderCreateSuccess;
+
+    public void showOrderMetalDialog(Context context, String weight, String priceForKg,final String buyerId, final BuyerModel buyerModel,final OrderCreateSuccess interfaceSuccess) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
@@ -40,6 +44,7 @@ public class OrderMetalDialog {
 
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+        orderCreateSuccess = interfaceSuccess;
 
 
         textViewMetalPrice = dialog.findViewById(R.id.mtv_price);
@@ -80,16 +85,17 @@ public class OrderMetalDialog {
             public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot != null && snapshot.exists()) {
                     // recode exist
-                    int x =10;
+
                 } else {
                     // new recode
                     saveNewData(buyerId,userId,totalPrice,buyerModel);
                 }
             }
 
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                int y = 10;
+                //because it is no need to implement
             }
         });
     }
@@ -114,10 +120,13 @@ public class OrderMetalDialog {
         if (id != null) {
             String queryColumn = buyerId+"_"+sellerId+"_"+ WasteType.METAL.toString() +"_"+ RequestStatus.ACTIVE.toString();
             Order order = new Order(id,
-                    buyerId,buyerModel.getUser().getFirstName(), buyerModel.getUser().getEmail(),buyerModel.getUser().getPhone().toString(),buyerModel.getUser().getAddress().toString(),
+                    buyerId,buyerModel.getUser().getFirstName(), buyerModel.getUser().getEmail(),buyerModel.getUser().getPhone(),buyerModel.getUser().getAddress(),
                     sellerId,sellerName,sellerEmail,sellerPhone,sellerAddress,
-                    Double.toString(price),totalWeightForDb.toString(),WasteType.METAL.toString() ,RequestStatus.ACTIVE.toString(),queryColumn);
+                    Double.toString(price),totalWeightForDb,WasteType.METAL.toString() ,RequestStatus.ACTIVE.toString(),queryColumn);
             orderDatabaseReference.child(id).setValue(order);
+
+
+            orderCreateSuccess.successCallback();
         }
     }
 }

@@ -9,12 +9,17 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.activities.LoginActivity;
 import com.groupite.trashcash.helpers.UserType;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -54,6 +59,24 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
+
+//        FirebaseInstanceId.getInstance().getInstanceId()
+//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+//                        if (!task.isSuccessful()) {
+//                            return;
+//                        }
+//
+//                        // Get new Instance ID token and send to server
+//                        String token = task.getResult().getToken();
+////                        sendTokenToServer(token);
+//                        int x=10;
+//                    }
+//                });
     }
 
     @Override
@@ -94,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         textViewUserType.setText(userType.toString().trim());
 
 
-        if(userType.equalsIgnoreCase(UserType.SELLER.toString())){
+        if(userType.equalsIgnoreCase(UserType.CLIENT.toString())){
             navigationView.getMenu().findItem(R.id.nav_agents).setVisible(true);
             navigationView.getMenu().findItem(R.id.nav_price).setVisible(false);
         }else {

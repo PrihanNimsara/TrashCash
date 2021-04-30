@@ -30,7 +30,10 @@ import prihanofficial.com.kokis.logics.Kokis;
 public class AgentsFragment extends Fragment {
 
     DatabaseReference root;
-    DatabaseReference userDatabaseReference,paperDatabaseReference, plasticDatabaseReference, metalDatabaseReference;
+    DatabaseReference userDatabaseReference;
+    DatabaseReference paperDatabaseReference;
+    DatabaseReference plasticDatabaseReference;
+    DatabaseReference metalDatabaseReference;
     Context context;
 
     ArrayList<BuyerModel> dataModels;
@@ -51,7 +54,7 @@ public class AgentsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_agents, container, false);
 
       String userType = Kokis.getKokisString("user_type", " ");
-if( userType.equalsIgnoreCase(UserType.SELLER.toString())) {
+if( userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
 
     //
     listView = (ListView) root.findViewById(R.id.list);
@@ -82,7 +85,7 @@ if( userType.equalsIgnoreCase(UserType.SELLER.toString())) {
 
 
     private void getUser(){
-        Query checkUser = userDatabaseReference.orderByChild("userType").equalTo(UserType.BUYER.toString());
+        Query checkUser = userDatabaseReference.orderByChild("userType").equalTo(UserType.AGENT.toString());
         dataModels= new ArrayList<>();
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

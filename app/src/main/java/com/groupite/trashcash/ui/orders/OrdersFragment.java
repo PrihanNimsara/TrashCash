@@ -53,7 +53,7 @@ public class OrdersFragment extends Fragment {
 
         String userType = Kokis.getKokisString("user_type", " ");
         String userId =  Kokis.getKokisString("user_id"," ");
-        if(userType.equalsIgnoreCase(UserType.BUYER.toString())){
+        if(userType.equalsIgnoreCase(UserType.AGENT.toString())){
             getDataBuyer(userId);
         }else {
             getDataSeller(userId);

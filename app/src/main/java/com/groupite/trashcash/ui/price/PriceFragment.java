@@ -93,7 +93,7 @@ public class PriceFragment extends Fragment {
         super.onResume();
 
         String userType = Kokis.getKokisString("user_type", " ");
-        if( userType.equalsIgnoreCase(UserType.BUYER.toString())) {
+        if( userType.equalsIgnoreCase(UserType.AGENT.toString())) {
             String userId = Kokis.getKokisString("user_id", null);
 
             Query checkPaper = paperDatabaseReference.orderByChild("userId").equalTo(userId);

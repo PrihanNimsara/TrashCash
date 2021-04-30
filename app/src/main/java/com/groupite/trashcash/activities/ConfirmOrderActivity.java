@@ -1,6 +1,7 @@
 package com.groupite.trashcash.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,9 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.groupite.trashcash.OrderCreateSuccess;
 import com.groupite.trashcash.R;
+import com.groupite.trashcash.helpers.MyDialogClickListener;
 import com.groupite.trashcash.models.BuyerModel;
 import com.groupite.trashcash.models.Metal;
 import com.groupite.trashcash.models.Paper;
@@ -26,7 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class ConfirmOrderActivity extends AppCompatActivity {
+public class ConfirmOrderActivity extends AppCompatActivity  {
 
     Button buttonRequestPaper, buttonRequestPlastic, buttonRequestMetal;
     TextView textViewPaperPriceKg, textViewPlasticPriceKg, textViewMetalPriceKg;
@@ -41,6 +45,8 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
     DatabaseReference root;
     DatabaseReference paperDatabaseReference, plasticDatabaseReference, metalDatabaseReference;
+
+    CoordinatorLayout coordinatorLayoutRoot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +70,18 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             public void onClick(View view) {
                 paperWeight = editTextPaper.getText().toString().trim();
 
-                if(!TextUtils.isEmpty(paperWeight)) {
+
+                if(priceForKgPaper!= null && !TextUtils.isEmpty(paperWeight)) {
                     OrderPaperDialog orderPaperDialog = new OrderPaperDialog();
-                    orderPaperDialog.showOrderPaperDialog(context, paperWeight, priceForKgPaper,userId,buyerModel);
+                    orderPaperDialog.showOrderPaperDialog(context, paperWeight, priceForKgPaper,userId,buyerModel,new OrderCreateSuccess() {
+
+                        @Override
+                        public void successCallback() {
+                            successMessage();
+                        }
+                    });
+                }else {
+                    errorMessage();
                 }
             }
         });
@@ -76,9 +91,17 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             public void onClick(View view) {
                 plasticWeight = editTextPlastic.getText().toString().trim();
 
-                if(!TextUtils.isEmpty(plasticWeight)) {
+                if(priceForKgPlastic != null && !TextUtils.isEmpty(plasticWeight)) {
                     OrderPlasticDialog orderPlasticDialog = new OrderPlasticDialog();
-                    orderPlasticDialog.showOrderPlasticDialog(context, plasticWeight, priceForKgPlastic,userId,buyerModel);
+                    orderPlasticDialog.showOrderPlasticDialog(context, plasticWeight, priceForKgPlastic,userId,buyerModel,new OrderCreateSuccess() {
+
+                        @Override
+                        public void successCallback() {
+                            successMessage();
+                        }
+                    });
+                } else {
+                    errorMessage();
                 }
             }
         });
@@ -88,9 +111,17 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             public void onClick(View view) {
                 metalWeight = editTextMetal.getText().toString().trim();
 
-                if(!TextUtils.isEmpty(metalWeight)) {
+                if(priceForKgMetal != null && !TextUtils.isEmpty(metalWeight)) {
                     OrderMetalDialog orderMetalDialog = new OrderMetalDialog();
-                    orderMetalDialog.showOrderMetalDialog(context, metalWeight,priceForKgMetal,userId,buyerModel);
+                    orderMetalDialog.showOrderMetalDialog(context, metalWeight,priceForKgMetal,userId,buyerModel,new OrderCreateSuccess() {
+
+                        @Override
+                        public void successCallback() {
+                            successMessage();
+                        }
+                    });
+                }else {
+                    errorMessage();
                 }
             }
         });
@@ -118,7 +149,15 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     }
                     if (paper != null) {
                         priceForKgPaper = paper.getPriceForKg().toString();
-                        textViewPaperPriceKg.setText(priceForKgPaper);
+
+                        if (!priceForKgPaper.isEmpty()) {
+                            textViewPaperPriceKg.setText(priceForKgPaper);
+                        }else {
+                            textViewPaperPriceKg.setText(getString(R.string.na));
+                        }
+
+
+
                     }
 
                 } else {
@@ -142,7 +181,14 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     }
                     if (plastic != null) {
                       priceForKgPlastic = plastic.getPriceForKg().toString();
-                      textViewPlasticPriceKg.setText(priceForKgPlastic);
+
+                        if (!priceForKgPlastic.isEmpty()) {
+                            textViewPlasticPriceKg.setText(priceForKgPlastic);
+                        }else {
+                            textViewPlasticPriceKg.setText(getString(R.string.na));
+                        }
+
+
                     }
 
                 } else {
@@ -166,7 +212,14 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     }
                     if (metal != null) {
                      priceForKgMetal = metal.getPriceForKg().toString();
-                     textViewMetalPriceKg.setText(priceForKgMetal);
+
+                        if (!priceForKgMetal.isEmpty()) {
+                            textViewMetalPriceKg.setText(priceForKgMetal);
+                        }else {
+                            textViewMetalPriceKg.setText(getString(R.string.na));
+                        }
+
+
                     }
 
                 } else {
@@ -181,6 +234,8 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     }
 
     private void init(){
+        coordinatorLayoutRoot = findViewById(R.id.root);
+
         buttonRequestPaper = findViewById(R.id.bt_request_paper);
         buttonRequestPlastic = findViewById(R.id.bt_request_plastic);
         buttonRequestMetal = findViewById(R.id.bt_request_metal);
@@ -207,4 +262,13 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         finish();
         return super.onSupportNavigateUp();
     }
+
+    private void errorMessage() {
+        Toast.makeText(this,getString(R.string.some_thing),Toast.LENGTH_SHORT).show();
+    }
+    private  void  successMessage(){
+        Toast.makeText(this,getString(R.string.success_create),Toast.LENGTH_SHORT).show();
+    }
+
+
 }

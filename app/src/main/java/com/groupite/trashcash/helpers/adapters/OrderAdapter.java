@@ -108,12 +108,12 @@ public class OrderAdapter extends ArrayAdapter<Order> implements View.OnClickLis
         lastPosition = position;
 
         String userType = Kokis.getKokisString("user_type", " ");
-        if (userType.equalsIgnoreCase(UserType.SELLER.toString())) {
+        if (userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
             viewHolder.textViewName.setText(orderDataModel.getBuyerName().toString().trim());
             viewHolder.textViewCity.setText(orderDataModel.getBuyerAddress().toString().trim());
             viewHolder.textViewEmail.setText(orderDataModel.getBuyerEmail().toString().trim());
             viewHolder.textViewPhone.setText(orderDataModel.getBuyerPhone().toString().trim());
-        } else if (userType.equalsIgnoreCase(UserType.BUYER.toString())) {
+        } else if (userType.equalsIgnoreCase(UserType.AGENT.toString())) {
             viewHolder.textViewName.setText(orderDataModel.getSellerName().toString().trim());
             viewHolder.textViewCity.setText(orderDataModel.getSellerAddress().toString().trim());
             viewHolder.textViewEmail.setText(orderDataModel.getSellerEmail().toString().trim());

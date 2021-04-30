@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.groupite.trashcash.OrderCreateSuccess;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.RequestStatus;
 import com.groupite.trashcash.helpers.WasteType;
@@ -31,7 +33,9 @@ public class OrderPaperDialog {
     DatabaseReference orderDatabaseReference;
     String totalWeightForDb = null;
 
-    public void showOrderPaperDialog(Context context, String weight, String priceForKg, final String buyerId, final BuyerModel buyerModel) {
+    OrderCreateSuccess orderCreateSuccess;
+
+    public void showOrderPaperDialog(Context context, String weight, String priceForKg, final String buyerId, final BuyerModel buyerModel, final OrderCreateSuccess interfaceSuccess) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
@@ -40,6 +44,8 @@ public class OrderPaperDialog {
 
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+
+        orderCreateSuccess = interfaceSuccess;
 
 
         textViewPaperPrice = dialog.findViewById(R.id.mtv_price);
@@ -120,6 +126,8 @@ public class OrderPaperDialog {
                     sellerId,sellerName,sellerEmail,sellerPhone,sellerAddress,
                     Double.toString(price),totalWeightForDb.toString(),WasteType.PAPER.toString() ,RequestStatus.ACTIVE.toString(),queryColumn);
             orderDatabaseReference.child(id).setValue(order);
+
+            orderCreateSuccess.successCallback();
         }
     }
 }

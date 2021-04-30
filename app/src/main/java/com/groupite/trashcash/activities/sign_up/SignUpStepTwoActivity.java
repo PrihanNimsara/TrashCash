@@ -109,7 +109,7 @@ public class SignUpStepTwoActivity extends AppCompatActivity {
 
         buttonSignUp = findViewById(R.id.bt_signup);
 
-        userType = UserType.SELLER.toString();
+        userType = UserType.CLIENT.toString();
 
 
         radioGroupUserType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
@@ -117,10 +117,10 @@ public class SignUpStepTwoActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch(checkedId){
                     case R.id.r_user_type_seller:
-                        userType = UserType.SELLER.toString();
+                        userType = UserType.CLIENT.toString();
                         break;
                     case R.id.r_user_type_buyer:
-                        userType = UserType.BUYER.toString();
+                        userType = UserType.AGENT.toString();
                         break;
                 }
             }
