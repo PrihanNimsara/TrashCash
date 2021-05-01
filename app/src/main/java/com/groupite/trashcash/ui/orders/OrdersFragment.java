@@ -6,10 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.UserType;
 import com.groupite.trashcash.helpers.adapters.OrderAdapter;
@@ -33,6 +37,11 @@ public class OrdersFragment extends Fragment {
 
     ArrayList<Order> orderArrayList;
     ListView listView;
+
+    RelativeLayout relativeLayoutRoot;
+    TextView textViewOrderNotFound;
+
+
     private static OrderAdapter adapter;
 
     @Override
@@ -49,6 +58,9 @@ public class OrdersFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_orders, container, false);
+
+        relativeLayoutRoot= (RelativeLayout) root.findViewById(R.id.root) ;
+        textViewOrderNotFound = root.findViewById(R.id.tv_order);
         listView = (ListView) root.findViewById(R.id.list);
 
         String userType = Kokis.getKokisString("user_type", " ");
@@ -69,6 +81,8 @@ public class OrdersFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot != null && snapshot.exists()) {
+                    textViewOrderNotFound.setVisibility(View.GONE);
+
                     Order order = null;
                     orderArrayList = new ArrayList<>();
                     orderArrayList.clear();
@@ -81,7 +95,7 @@ public class OrdersFragment extends Fragment {
 
                     setDataToList();
                 } else {
-                    //showError();
+                    noDataAvaialble();
                 }
             }
 
@@ -98,6 +112,9 @@ public class OrdersFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot != null && snapshot.exists()) {
+
+                    textViewOrderNotFound.setVisibility(View.GONE);
+
                     Order order = null;
                     orderArrayList = new ArrayList<>();
                     orderArrayList.clear();
@@ -110,7 +127,7 @@ public class OrdersFragment extends Fragment {
 
                     setDataToList();
                 } else {
-                    //showError();
+                    noDataAvaialble();
                 }
             }
 
@@ -126,4 +143,9 @@ public class OrdersFragment extends Fragment {
     }
 
 
+
+    private void noDataAvaialble(){
+        textViewOrderNotFound.setVisibility(View.VISIBLE);
+        Snackbar.make(relativeLayoutRoot,"orders not available", BaseTransientBottomBar.LENGTH_SHORT).show();
+    }
 }

@@ -7,8 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.UserType;
 import com.groupite.trashcash.helpers.adapters.AgentsAdapter;
@@ -40,6 +45,10 @@ public class AgentsFragment extends Fragment {
     ListView listView;
     private static AgentsAdapter adapter;
 
+
+    RelativeLayout relativeLayoutRoot;
+
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -52,6 +61,9 @@ public class AgentsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_agents, container, false);
+
+        relativeLayoutRoot= (RelativeLayout) root.findViewById(R.id.root) ;
+
 
       String userType = Kokis.getKokisString("user_type", " ");
 if( userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
@@ -91,6 +103,8 @@ if( userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot != null && snapshot.exists()) {
+
+
                     User user = null;
                     dataModels = new ArrayList<>();
                     dataModels.clear();
@@ -103,7 +117,7 @@ if( userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
 
                     setDataToList();
                 } else {
-                    //showError();
+                   noDataAvaialble();
                 }
             }
 
@@ -118,4 +132,10 @@ if( userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
         listView.setAdapter(adapter);
     }
 
+
+
+    private void noDataAvaialble(){
+
+        Snackbar.make(relativeLayoutRoot,"Agent not found", BaseTransientBottomBar.LENGTH_SHORT).show();
+    }
 }
