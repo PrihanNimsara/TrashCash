@@ -9,7 +9,7 @@ import android.util.Log;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
-import static com.groupite.trashcash.LoginActivity.dialog;
+import static com.groupite.trashcash.activities.LoginActivity.dialog;
 
 public class NetworkChangeReceiver extends BroadcastReceiver
 {

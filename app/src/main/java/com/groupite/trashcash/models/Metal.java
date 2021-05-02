@@ -1,22 +1,24 @@
 package com.groupite.trashcash.models;
 
-public class Metal {
+import java.io.Serializable;
+
+public class Metal implements Serializable {
     private String id;
 
     private String userId;
     private String userType;
     private String priceForKg;
-    private String compensationPrice;
+
 
     public Metal() {
     }
 
-    public Metal(String id, String userId, String userType, String priceForKg, String compensationPrice) {
+    public Metal(String id, String userId, String userType, String priceForKg) {
         this.id = id;
         this.userId = userId;
         this.userType = userType;
         this.priceForKg = priceForKg;
-        this.compensationPrice = compensationPrice;
+
     }
 
     public String getId() {
@@ -51,11 +53,5 @@ public class Metal {
         this.priceForKg = priceForKg;
     }
 
-    public String getCompensationPrice() {
-        return compensationPrice;
-    }
 
-    public void setCompensationPrice(String compensationPrice) {
-        this.compensationPrice = compensationPrice;
-    }
 }

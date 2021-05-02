@@ -7,10 +7,12 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_logout">Logout</string>
 
-    <string name="menu_home">Price Control</string>
-    <string name="menu_gallery">Orders</string>
-    <string name="menu_slideshow">Profile</string>
-    <string name="menu_buyer">Recycling Market</string>
+    <string name="na">N/A</string>
+
+    <string name="menu_price">Price</string>
+    <string name="menu_orders">Orders</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_agents">Agents</string>
     <string name="menu_Calendar">Calendar</string>
     <string name="menu_news">News</string>
     <string name="menu_faq">FAQ</string>
@@ -23,12 +25,13 @@
     <string name="user_type">User Type</string>
     <string name="user_name">User Name</string>
     <string name="password">Password</string>
-    <string name="seller">Seller</string>
-    <string name="buyer">Buyer</string>
+    <string name="client">Client</string>
+    <string name="agent">Agent</string>
 
     <string name="login">Log In</string>
     <string name="forgot">Forgot your password?</string>
     <string name="signup">Sign Up</string>
+    <string name="next">Next</string>
     <string name="new_user">New user? sign up</string>
     <string name="sign_in_to">Sign in to continue</string>
 
@@ -41,33 +44,37 @@
     <string name="Metal">Metal</string>
 
     <string name="weight">Weight (Kg) </string>
-    <string name="price_for_kg">Price for Kg (Rs) </string>
+    <string name="price_for_kg">Price for 1 Kg (Rs) </string>
     <string name="compensation_price">Compensation Price (Rs)</string>
     <string name="price">Price (Rs) : </string>
 
-    <string name="paper_weight">Paper Weight (Kg) </string>
-    <string name="paper_price_for_kg">Paper Price for Kg (Rs) </string>
+    <string name="paper_weight">Paper Weight in (Kg) </string>
+    <string name="paper_price_for_kg">Paper Price for 1 Kg (Rs) </string>
     <string name="paper_compensation_price">Paper Compensation Price (Rs)</string>
 
-    <string name="plastic_weight">Plastic Weight (Kg) </string>
-    <string name="plastic_price_for_kg">Plastic Price for Kg (Rs) </string>
+    <string name="plastic_weight">Plastic Weight in (Kg) </string>
+    <string name="plastic_price_for_kg">Plastic Price for 1 Kg (Rs) </string>
     <string name="plastic_compensation_price">Plastic Compensation Price (Rs)</string>
 
-    <string name="metal_weight">Metal Weight (Kg) </string>
-    <string name="metal_price_for_kg">Metal Price for Kg (Rs) </string>
+    <string name="metal_weight">Metal Weight in (Kg) </string>
+    <string name="metal_price_for_kg">Metal Price for 1 Kg (Rs) </string>
     <string name="metal_compensation_price">Metal Compensation Price (Rs)</string>
 
     <string name="update">Update</string>
     <string name="save">Save</string>
 
+    <string name="can_not_be">can not be empty</string>
 
     <string name="not_available">N/A</string>
-    <string name="apply">Apply</string>
+    <string name="apply">Place an Order</string>
+    <string name="well_done">Well Done</string>
+    <string name="your_profile_is">Your profile has been created.</string>
     <string name="cancel">Cancel</string>
     <string name="request">Request</string>
     <string name="title_activity_maps">Map</string>
 
     <string name="view">View</string>
+    <string name="back_to_login">Back to Login</string>
 
     <string name="buyer_name">Buyer Name :</string>
     <string name="buyer_email">Buyer Email Address :</string>
@@ -85,12 +92,26 @@
     <string name="type">Type :</string>
     <string name="status">Status :</string>
 
+
     <string name="call">Call</string>
     <string name="end">Order Cancel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    
-    
+
+
     <string name="sign_up">Sign Up</string>
-    <string name="sign_up_to">Sign up to get the best experience</string>
+    <string name="order_details">Order details</string>
+    <string name="sign_up_one">Step One</string>
+    <string name="sign_up_two">Step Two</string>
+
+    <string name="powered_by">Powered by Group IT E</string>
+
+    <string name="name">Name:</string>
+    <string name="city">City:</string>
+    <string name="email_address">Email:</string>
+    <string name="phone_no">Phone:</string>
+
+    <string name="some_thing">Something went wrong, please try again</string>
+    <string name="success_create">Order Created</string>
+
 </resources>

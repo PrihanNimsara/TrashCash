@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
-import com.groupite.trashcash.MapsActivity;
+import com.groupite.trashcash.activities.MapsActivity;
 import com.groupite.trashcash.R;
+import com.groupite.trashcash.activities.OrderDetaillsActivity;
 import com.groupite.trashcash.helpers.UserType;
 import com.groupite.trashcash.models.Order;
 import com.google.android.material.card.MaterialCardView;
@@ -21,32 +23,33 @@ import java.util.ArrayList;
 
 import prihanofficial.com.kokis.logics.Kokis;
 
-public class OrderAdapter extends ArrayAdapter<Order> implements View.OnClickListener{
+public class OrderAdapter extends ArrayAdapter<Order> implements View.OnClickListener {
     private ArrayList<Order> orderDataSet;
     Context mContext;
 
     // View lookup cache
     private static class ViewHolder {
-        TextView textViewBuyerName, textViewBuyerEmail, textViewBuyerPhone, textViewBuyerAddress;
-        TextView textViewSellerName, textViewSellerEmail, textViewSellerPhone, textViewSellerAddress;
+        TextView textViewName, textViewCity, textViewEmail, textViewPhone;
+        Button buttonView;
+
         TextView textViewWeight, textViewPrice, textViewType, textViewStatus;
-        ExtendedFloatingActionButton buttonView;
+
         MaterialCardView materialCardViewOne, materialCardViewTwo;
     }
 
     public OrderAdapter(ArrayList<Order> data, Context context) {
         super(context, R.layout.row_item_order, data);
         this.orderDataSet = data;
-        this.mContext=context;
+        this.mContext = context;
 
     }
 
     @Override
     public void onClick(View v) {
 
-        int position=(Integer) v.getTag();
-        Object object= getItem(position);
-        Order orderModel =(Order) object;
+        int position = (Integer) v.getTag();
+        Object object = getItem(position);
+        Order orderModel = (Order) object;
 
 //        switch (v.getId())
 //        {
@@ -74,80 +77,77 @@ public class OrderAdapter extends ArrayAdapter<Order> implements View.OnClickLis
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.row_item_order, parent, false);
 
-            viewHolder.textViewBuyerName = convertView.findViewById(R.id.tv_buyer_name);
-            viewHolder.textViewBuyerEmail = convertView.findViewById(R.id.tv_buyer_email);
-            viewHolder.textViewBuyerPhone =  convertView.findViewById(R.id.tv_buyer_phone);
-            viewHolder.textViewBuyerAddress =  convertView.findViewById(R.id.tv_buyer_address);
-
-            viewHolder.textViewSellerName = convertView.findViewById(R.id.tv_seller_name);
-            viewHolder.textViewSellerEmail = convertView.findViewById(R.id.tv_seller_email);
-            viewHolder.textViewSellerPhone =  convertView.findViewById(R.id.tv_seller_phone);
-            viewHolder.textViewSellerAddress =  convertView.findViewById(R.id.tv_seller_address);
-
-            viewHolder.textViewWeight = convertView.findViewById(R.id.tv_total_weight);
-            viewHolder.textViewPrice = convertView.findViewById(R.id.tv_total_price);
-            viewHolder.textViewType =  convertView.findViewById(R.id.tv_ttype);
-            viewHolder.textViewStatus =  convertView.findViewById(R.id.tv_status);
+            viewHolder.textViewName = convertView.findViewById(R.id.tv_name);
+            viewHolder.textViewCity = convertView.findViewById(R.id.tv_city);
+            viewHolder.textViewEmail = convertView.findViewById(R.id.tv_email_addres);
+            viewHolder.textViewPhone = convertView.findViewById(R.id.tv_phone_num);
 
             viewHolder.buttonView = convertView.findViewById(R.id.bt_view);
 
-            viewHolder.materialCardViewOne = convertView.findViewById(R.id.mcv_one);
-            viewHolder.materialCardViewTwo = convertView.findViewById(R.id.mcv_two);
 
-            result=convertView;
+//            viewHolder.textViewWeight = convertView.findViewById(R.id.tv_total_weight);
+//            viewHolder.textViewPrice = convertView.findViewById(R.id.tv_total_price);
+//            viewHolder.textViewType =  convertView.findViewById(R.id.tv_ttype);
+//            viewHolder.textViewStatus =  convertView.findViewById(R.id.tv_status);
+//
+//            viewHolder.buttonView = convertView.findViewById(R.id.bt_view);
+//
+//            viewHolder.materialCardViewOne = convertView.findViewById(R.id.mcv_one);
+//            viewHolder.materialCardViewTwo = convertView.findViewById(R.id.mcv_two);
+
+            result = convertView;
 
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (OrderAdapter.ViewHolder) convertView.getTag();
-            result=convertView;
+            result = convertView;
         }
 
         Animation animation = AnimationUtils.loadAnimation(mContext, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
         result.startAnimation(animation);
         lastPosition = position;
 
-        viewHolder.textViewBuyerName.setText(orderDataModel.getBuyerName().toString().trim());
-        viewHolder.textViewBuyerEmail.setText(orderDataModel.getBuyerEmail().toString().trim());
-        viewHolder.textViewBuyerPhone.setText(orderDataModel.getBuyerPhone().toString().trim());
-        viewHolder.textViewBuyerAddress.setText(orderDataModel.getBuyerAddress().toString().trim());
+        String userType = Kokis.getKokisString("user_type", " ");
+        if (userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
+            viewHolder.textViewName.setText(orderDataModel.getBuyerName().toString().trim());
+            viewHolder.textViewCity.setText(orderDataModel.getBuyerAddress().toString().trim());
+            viewHolder.textViewEmail.setText(orderDataModel.getBuyerEmail().toString().trim());
+            viewHolder.textViewPhone.setText(orderDataModel.getBuyerPhone().toString().trim());
+        } else if (userType.equalsIgnoreCase(UserType.AGENT.toString())) {
+            viewHolder.textViewName.setText(orderDataModel.getSellerName().toString().trim());
+            viewHolder.textViewCity.setText(orderDataModel.getSellerAddress().toString().trim());
+            viewHolder.textViewEmail.setText(orderDataModel.getSellerEmail().toString().trim());
+            viewHolder.textViewPhone.setText(orderDataModel.getSellerPhone().toString().trim());
+        }
 
-        viewHolder.textViewSellerName.setText(orderDataModel.getSellerName().toString().trim());
-        viewHolder.textViewSellerEmail.setText(orderDataModel.getSellerEmail().toString().trim());
-        viewHolder.textViewSellerPhone.setText(orderDataModel.getSellerPhone().toString().trim());
-        viewHolder.textViewSellerAddress.setText(orderDataModel.getSellerAddress().toString().trim());
-
-        viewHolder.textViewWeight.setText(orderDataModel.getWeight().toString().trim());
-        viewHolder.textViewPrice.setText(orderDataModel.getPrice().toString().trim());
-        viewHolder.textViewType.setText(orderDataModel.getType().toString().trim());
-        viewHolder.textViewStatus.setText(orderDataModel.getStatus().toString().trim());
+//
+//        viewHolder.buttonView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               singleApplyClick(orderDataModel);
+//            }
+//        });
 
         viewHolder.buttonView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               singleApplyClick(orderDataModel);
+                singleApplyClick(orderDataModel);
             }
         });
 
-        String userType =  Kokis.getKokisString("user_type"," ");
-        if(userType.equalsIgnoreCase(UserType.SELLER.toString())){
-            viewHolder.materialCardViewTwo.setVisibility(View.GONE);
-            viewHolder.materialCardViewOne.setVisibility(View.VISIBLE);
-        }else {
-            viewHolder.materialCardViewTwo.setVisibility(View.VISIBLE);
-            viewHolder.materialCardViewOne.setVisibility(View.GONE);
-        }
 
         return convertView;
     }
 
 
-    private void singleApplyClick( Order order){
-        Intent intent = new Intent(mContext, MapsActivity.class);
-        intent.putExtra("sellerAddress",order.getSellerAddress());
-        intent.putExtra("buyerAddress",order.getBuyerAddress());
-        intent.putExtra("sellerPhone",order.getSellerPhone());
-        intent.putExtra("buyerPhone",order.getBuyerPhone());
-        intent.putExtra("orderID",order.getId());
+    private void singleApplyClick(Order order) {
+        Intent intent = new Intent(mContext, OrderDetaillsActivity.class);
+//        intent.putExtra("sellerAddress", order.getSellerAddress());
+//        intent.putExtra("buyerAddress", order.getBuyerAddress());
+//        intent.putExtra("sellerPhone", order.getSellerPhone());
+//        intent.putExtra("buyerPhone", order.getBuyerPhone());
+//        intent.putExtra("orderID", order.getId());
+        intent.putExtra("order",order);
         mContext.startActivity(intent);
     }
 }

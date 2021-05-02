@@ -1,658 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:padding="5dp">
+    android:backgroundTint="@color/colorPrimary"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="0.5dp">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginStart="3dp"
+        android:background="@color/conversation_list_item_back_color"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
 
-        android:backgroundTint="@color/colorAccent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mcv_one"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+        <com.google.android.material.textview.MaterialTextView
 
-                android:backgroundTint="@color/light_g">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+            android:id="@+id/tv_first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/name"
 
-                        android:text="Buyer Details"
+            android:textSize="12sp"
 
-                        android:textStyle="bold"
-                        android:textSize="15sp"
-                        android:textColor="@color/pure_black"
 
-                        android:layout_centerHorizontal="true"
 
-                        android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- name -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
 
-                        android:id="@+id/tv_buyer_header"
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
 
-                        android:drawableStart="@drawable/ic_baseline_from"
-                        android:drawablePadding="10dp"
-                        />
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+        <com.google.android.material.textview.MaterialTextView
 
-                        android:text="@string/buyer_name"
+            android:id="@+id/tv_email"
+            android:layout_width="0dp"
 
 
-                        android:textSize="12sp"
-                        android:textColor="@color/pure_black"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
 
-                        android:layout_alignParentStart="true"
+            android:text="@string/city"
 
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
 
-                        android:layout_below="@+id/tv_buyer_header"
-                        android:id="@+id/tv_buyer_name_header"
-                        />
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+            android:textSize="12sp"
 
-                        android:text="@string/not_available"
 
+            app:layout_constraintStart_toStartOf="parent"
 
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        <!-- city -->
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
 
-                        android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
 
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-                        android:layout_below="@+id/tv_buyer_header"
-                        android:layout_toEndOf="@+id/tv_buyer_name_header"
-                        android:id="@+id/tv_buyer_name"
-                        />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_phone"
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+            android:layout_width="0dp"
 
-                        android:text="@string/buyer_email"
 
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_email"
+            android:layout_margin="10dp"
+            android:text="@string/email_address"
 
-                        android:textSize="12sp"
-                        android:textColor="@color/pure_black"
+            android:textSize="12sp"
 
-                        android:layout_alignParentStart="true"
 
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
+            app:layout_constraintStart_toStartOf="parent"
 
-                        android:layout_below="@+id/tv_buyer_name_header"
-                        android:id="@+id/tv_buyer_email_header"
-                        />
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+        <!-- email -->
+        <TextView
+            android:id="@+id/tv_email_addres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
 
-                        android:text="@string/not_available"
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
 
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
 
-                        android:layout_alignParentEnd="true"
+        <com.google.android.material.textview.MaterialTextView
 
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
 
-                        android:layout_below="@+id/tv_buyer_name"
-                        android:layout_toEndOf="@+id/tv_buyer_email_header"
-                        android:id="@+id/tv_buyer_email"
-                        />
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
 
-                        android:text="@string/buyer_phone_number"
+            android:layout_below="@+id/tv_phone"
+            android:layout_margin="10dp"
+            android:text="@string/phone_no"
 
+            android:textSize="12sp"
 
-                        android:textSize="12sp"
-                        android:textColor="@color/pure_black"
 
-                        android:layout_alignParentStart="true"
 
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
 
-                        android:layout_below="@+id/tv_buyer_email_header"
-                        android:id="@+id/tv_buyer_phone_header"
-                        />
+            app:layout_constraintStart_toStartOf="parent"
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
 
-                        android:text="@string/not_available"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_addres" />
 
+        <!-- phone -->
+        <TextView
+            android:id="@+id/tv_phone_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
 
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
 
-                        android:layout_alignParentEnd="true"
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_addres"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
 
-                        android:layout_below="@+id/tv_buyer_email"
-                        android:layout_toEndOf="@+id/tv_buyer_phone_header"
-                        android:id="@+id/tv_buyer_phone"
-                        />
-                    <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialButtonOutlinedStyle"
 
-                    android:text="@string/buyer_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_address"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view"
+            android:textAllCaps="false"
+            android:id="@+id/bt_view"
+            android:layout_marginRight="10dp"
 
+            android:textSize="12sp"
 
-                    android:textSize="12sp"
-                    android:textColor="@color/pure_black"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    android:layout_alignParentStart="true"
-
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-
-                    android:layout_below="@+id/tv_buyer_phone_header"
-                    android:id="@+id/tv_buyer_address_header"
-                    />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-
-                        android:layout_below="@+id/tv_buyer_phone"
-                        android:layout_toEndOf="@+id/tv_buyer_address_header"
-                        android:id="@+id/tv_buyer_address"
-                        />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-
-                android:backgroundTint="@color/light_g"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mcv_two"
-                android:layout_below="@id/mcv_one"
-
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="Seller Details"
-
-                        android:textStyle="bold"
-                        android:textSize="15sp"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_centerHorizontal="true"
-
-                        android:layout_margin="10dp"
-
-                        android:id="@+id/tv_seller_header"
-
-                        android:drawableStart="@drawable/ic_baseline_to"
-                        android:drawablePadding="10dp"
-                        />
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/seller_name"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-
-                        android:layout_below="@+id/tv_seller_header"
-                        android:id="@+id/tv_seller_name_header"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-
-                        android:layout_below="@+id/tv_seller_header"
-                        android:layout_toEndOf="@+id/tv_seller_name_header"
-                        android:id="@+id/tv_seller_name"
-                        />
-
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/seller_email"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-
-                        android:layout_below="@+id/tv_seller_name_header"
-                        android:id="@+id/tv_seller_email_header"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-
-                        android:layout_below="@+id/tv_seller_name"
-                        android:layout_toEndOf="@+id/tv_seller_email_header"
-                        android:id="@+id/tv_seller_email"
-                        />
-
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/seller_phone_number"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-
-                        android:layout_below="@+id/tv_seller_email_header"
-                        android:id="@+id/tv_seller_phone_header"
-                        />
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-
-                        android:layout_below="@+id/tv_seller_email_header"
-                        android:layout_toEndOf="@+id/tv_seller_phone_header"
-                        android:id="@+id/tv_seller_phone"
-                        />
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/seller_address"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-
-                        android:layout_below="@+id/tv_seller_phone_header"
-                        android:id="@+id/tv_seller_address_header"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-
-                        android:layout_below="@+id/tv_seller_phone"
-                        android:layout_toEndOf="@+id/tv_seller_address_header"
-                        android:id="@+id/tv_seller_address"
-                        />
-
-
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mcv_three"
-                android:layout_below="@id/mcv_two"
-
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="Order Details"
-
-                        android:textStyle="bold"
-                        android:textSize="15sp"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_centerHorizontal="true"
-
-                        android:layout_margin="10dp"
-
-                        android:id="@+id/tv_order_header"
-
-                        android:drawableStart="@drawable/ic_baseline_order"
-                        android:drawablePadding="10dp"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/total_weight"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/tv_order_header"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-
-
-                        android:id="@+id/tv_total_weight_header"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/tv_order_header"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-
-
-                        android:layout_toEndOf="@+id/tv_total_weight_header"
-                        android:id="@+id/tv_total_weight"
-                        />
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/total_price"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-                        android:layout_below="@+id/tv_total_weight_header"
-
-                        android:id="@+id/tv_total_price_header"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-                        android:layout_below="@+id/tv_total_weight"
-                        android:layout_toEndOf="@+id/tv_total_price_header"
-                        android:id="@+id/tv_total_price"
-                        />
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/type"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-                        android:layout_below="@+id/tv_total_price_header"
-
-                        android:id="@+id/tv_ttype_header"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-                        android:layout_below="@+id/tv_total_price"
-                        android:layout_toEndOf="@+id/tv_ttype_header"
-                        android:id="@+id/tv_ttype"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/status"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/pure_black"
-
-                        android:layout_alignParentStart="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-                        android:layout_below="@+id/tv_ttype_header"
-
-                        android:id="@+id/tv_status_header"
-                        />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/not_available"
-
-
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-
-                        android:layout_alignParentEnd="true"
-
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-
-                        android:layout_below="@+id/tv_ttype"
-                        android:layout_toEndOf="@+id/tv_status_header"
-                        android:id="@+id/tv_status"
-                        />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="@string/view"
-                android:textColor="@color/colorAccent"
-
-
-                android:textAllCaps="false"
-
-                android:backgroundTint="@color/colorPrimary"
-
-                android:layout_below="@+id/mcv_three"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="10dp"
-
-                app:icon="@drawable/ic_baseline_pin_drop_24"
-                app:iconTint="@color/colorAccent"
-
-                android:gravity="center"
-                app:iconPadding="10dp"
-
-                android:id="@+id/bt_view"/>
-        </RelativeLayout>
-    </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
-
+</com.google.android.material.card.MaterialCardView>

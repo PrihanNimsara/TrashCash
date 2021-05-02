@@ -1,61 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
-<RelativeLayout
+    tools:context=".activities.SplashActivity"
+    android:id="@+id/root">
 
-    android:id="@+id/one"
-    android:layout_width="match_parent"
-    android:layout_height="300dp">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-</RelativeLayout>
-    <RelativeLayout
-        android:layout_below="@+id/one"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:clickable="true"
-            app:civ_border_width="3dp"
-            app:civ_border_color="#FFFFFFFF"
-            android:id="@+id/profilePicture"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-            android:layout_marginTop="130dp"
-            android:elevation="5dp"
-            android:padding="20dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/logo" />
+        android:text="@string/powered_by"
+        android:layout_margin="10dp"
 
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@color/colorGreen"
-
-            android:layout_below="@+id/profilePicture"
-            android:layout_centerHorizontal="true"
-
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:id="@+id/name"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/version"
-            android:textSize="10sp"
-            android:layout_below="@+id/name"
-            android:text="@string/not_available"
-            android:textColor="@color/colorPrimary"
-            android:layout_centerHorizontal="true"
-            />
-    </RelativeLayout>
-
-</RelativeLayout>
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

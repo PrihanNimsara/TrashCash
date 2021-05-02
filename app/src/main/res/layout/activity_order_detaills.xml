@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".activities.OrderDetaillsActivity">
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:theme="@style/ThemeOverlay.AppCompat.Light"
+
+    app:liftOnScroll="true"
+    >
+
+    <com.google.android.material.appbar.MaterialToolbar
+
+
+
+
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/white"
+
+
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+
+
+        android:id="@+id/topAppBar"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+
+        app:title="@string/order_details"
+
+
+
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+    <!-- Here your ProgressBar -->
+
+    <ProgressBar
+        android:visibility="gone"
+        android:background="@color/colorPrimary"
+        android:id="@+id/progress"
+        android:layout_marginTop="-7dp"
+        android:layout_marginBottom="-7dp"
+        android:indeterminate="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal" />
+
+</com.google.android.material.appbar.AppBarLayout>
+
+<!-- Note: A RecyclerView can also be used -->
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/colorPrimary"
+            android:text="@string/na"
+
+            android:textSize="10sp"
+            android:textStyle="bold"
+
+            android:id="@+id/tv_id"
+
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Weight (Kg):"
+            app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/tv_id"/>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+
+            android:id="@+id/tv_kg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/na"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a"
+            app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price (Rs):"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kg"/>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+            android:id="@+id/tv_rs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/na"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kg" />
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:id="@+id/c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Type:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rs" />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+            android:id="@+id/tv_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/na"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rs" />
+        <TextView
+
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:id="@+id/d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Status:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type" />
+
+        <TextView
+
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/na"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type" />
+
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialButtonOutlinedStyle"
+            android:id="@+id/bt_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Map"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:layout_margin="10dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
