@@ -18,7 +18,7 @@ import com.groupite.trashcash.models.Order;
 public class OrderDetaillsActivity extends AppCompatActivity {
 
 
-    TextView textViewKg, textViewRs, textViewType, textViewStatus;
+    TextView textViewKg, textViewRs, textViewType, textViewStatus, textViewId;
     Button buttonMap;
     private  Order order;
 
@@ -34,6 +34,7 @@ public class OrderDetaillsActivity extends AppCompatActivity {
     }
 
     private void init() {
+        textViewId = findViewById(R.id.tv_id);
         textViewKg = findViewById(R.id.tv_kg);
         textViewRs = findViewById(R.id.tv_rs);
         textViewType = findViewById(R.id.tv_type);
@@ -56,6 +57,7 @@ public class OrderDetaillsActivity extends AppCompatActivity {
     }
 
     private void setData() {
+        textViewId.setText(order.getId().toString().trim());
         textViewKg.setText(order.getWeight().toString().trim());
         textViewRs.setText(order.getPrice().toString().trim());
         textViewType.setText(order.getType().toString().trim());

@@ -68,8 +68,26 @@ tools:context=".activities.OrderDetaillsActivity">
         android:focusableInTouchMode="true">
 
         <TextView
+
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/colorPrimary"
+            android:text="@string/na"
+
+            android:textSize="10sp"
+            android:textStyle="bold"
+
+            android:id="@+id/tv_id"
+
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="20sp"
             android:textAllCaps="false"
 
             android:id="@+id/a"
@@ -77,11 +95,11 @@ tools:context=".activities.OrderDetaillsActivity">
             android:layout_height="wrap_content"
             android:text="Total Weight (Kg):"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+           app:layout_constraintTop_toBottomOf="@+id/tv_id"/>
 
         <TextView
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             android:textColor="@color/main_black"
 
@@ -91,10 +109,10 @@ tools:context=".activities.OrderDetaillsActivity">
             android:text="@string/na"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/a"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_id" />
         <TextView
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             android:id="@+id/b"
             android:layout_width="wrap_content"
@@ -105,7 +123,7 @@ tools:context=".activities.OrderDetaillsActivity">
 
         <TextView
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             android:textColor="@color/main_black"
             android:id="@+id/tv_rs"
@@ -117,7 +135,7 @@ tools:context=".activities.OrderDetaillsActivity">
             app:layout_constraintTop_toBottomOf="@+id/tv_kg" />
         <TextView
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             android:id="@+id/c"
             android:layout_width="wrap_content"
@@ -128,7 +146,7 @@ tools:context=".activities.OrderDetaillsActivity">
 
         <TextView
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             android:textColor="@color/main_black"
             android:id="@+id/tv_type"
@@ -141,7 +159,7 @@ tools:context=".activities.OrderDetaillsActivity">
         <TextView
 
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             android:id="@+id/d"
             android:layout_width="wrap_content"
@@ -153,7 +171,7 @@ tools:context=".activities.OrderDetaillsActivity">
         <TextView
 
             android:layout_margin="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             android:textColor="@color/main_black"
 
