@@ -54,10 +54,10 @@
         android:textSize="12sp"
         android:textAllCaps="false"
         style="?attr/materialButtonOutlinedStyle"
-        android:id="@+id/bt_apply1"
+        android:id="@+id/bt_apply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/apply"
+        android:text="@string/apply1"
 
         android:layout_margin="10dp"
         android:layout_alignParentStart="true"
