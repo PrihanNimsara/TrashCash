@@ -179,30 +179,30 @@ public class SignupActivity extends AppCompatActivity {
         firstName = textInputEditTextFirstName.getText().toString().trim();
         lastName = textInputEditTextLastName.getText().toString().trim();
         email = textInputEditTextEmail.getText().toString().trim();
-        if(!isEmailValid(email))
-            textInputLayoutEmail.setError("You need to enter a valid email");
-
         phone = textInputEditTextPhone.getText().toString().trim();
         address = textInputEditTextAddress.getText().toString().trim();
-
         userName = textInputEditTextUserName.getText().toString().trim();
         password = textInputEditTextPassword.getText().toString().trim();
+
+        boolean validUserName = (TextUtils.isEmpty(userName)) && (userName.matches("[A-Za-z0-9_]+"));
+        boolean validPassword = (TextUtils.isEmpty(password)) && (password.length()<8);
+        boolean validEmail = (TextUtils.isEmpty(email))&& (!isEmailValid(email));
 
         if (TextUtils.isEmpty(firstName)) {
             textInputLayoutFirstName.setError("You need to enter a first name");
         } else if (TextUtils.isEmpty(lastName)) {
             textInputLayoutLastName.setError("You need to enter a last name");
-        } else if (TextUtils.isEmpty(email)) {
-            textInputLayoutEmail.setError("You need to enter an email name");
+        } else if (!validEmail) {
+            textInputLayoutEmail.setError("You need to enter a valid email name");
         }else if(TextUtils.isEmpty(phone)){
             textInputLayoutPhone.setError("You need to enter a phone number");
         } else if(TextUtils.isEmpty(address)){
             textInputLayoutAddress.setError("You need to enter an address");
-        } else if (TextUtils.isEmpty(userName)) {
-            textInputLayoutUserName.setError("You need to enter a username name");
-        } else if (TextUtils.isEmpty(password)) {
-            textInputLayoutPassword.setError("You need to enter a password name");
-        } else {
+        } else if (!validUserName) {
+            textInputLayoutUserName.setError("You need to enter a valid username");
+        } else if (!validPassword) {
+            textInputLayoutPassword.setError("You need to enter a valid password");
+        }  else {
             saveData();
         }
     }
@@ -240,7 +240,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void showError() {
-        Toast.makeText(this, " sign up failed, because username exist", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, " sign up failed, Please enter required sign up details!", Toast.LENGTH_SHORT).show();
     }
 
     private void showDialog(){
