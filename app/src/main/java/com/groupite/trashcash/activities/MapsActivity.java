@@ -3,6 +3,7 @@ package com.groupite.trashcash.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
@@ -19,6 +20,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.groupite.trashcash.R;
 import com.groupite.trashcash.helpers.RequestStatus;
 import com.groupite.trashcash.helpers.UserType;
+import com.groupite.trashcash.helpers.WasteType;
 import com.groupite.trashcash.models.Order;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -51,7 +53,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private String buyerPhone = " ";
     private String orderId = " ";
 
-    Button buttonCall, buttonEnd;
+    Button buttonCall, buttonEnd, buttonComplete, buttonApprove;
 
     DatabaseReference root;
     DatabaseReference orderDatabaseReference;
@@ -75,6 +77,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         buttonCall = findViewById(R.id.bt_call);
         buttonEnd = findViewById(R.id.bt_end);
+        buttonComplete = findViewById(R.id.bt_complete);
+        buttonApprove = findViewById(R.id.bt_approve);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -85,6 +89,20 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View view) {
                 cancelOrder();
+            }
+        });
+
+        buttonComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                completedOrder();
+            }
+        });
+
+        buttonApprove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                approveOrder();
             }
         });
 
@@ -104,6 +122,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         });
+
+
+        String userType = Kokis.getKokisString("user_type", " ");
+        if (userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
+            buttonComplete.setVisibility(View.GONE);
+            buttonEnd.setVisibility(View.GONE);
+            buttonApprove.setVisibility(View.GONE);
+        } else {
+            buttonComplete.setVisibility(View.VISIBLE);
+            buttonEnd.setVisibility(View.VISIBLE);
+            buttonApprove.setVisibility(View.VISIBLE);
+        }
+
     }
 
     /**
@@ -131,7 +162,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             sellerMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sellerLatLng, zoomLevel));
             buyerMapMap.moveCamera(CameraUpdateFactory.newLatLngZoom(buyerLatLng, zoomLevel));
-
 
 
 //        mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
@@ -215,7 +245,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (snapshot != null && snapshot.exists()) {
                     Order order = null;
                     for (DataSnapshot userSnapShot : snapshot.getChildren()) {
-                        order  = userSnapShot.getValue(Order.class);
+                        order = userSnapShot.getValue(Order.class);
                         break;
                     }
                     if (order != null)
@@ -232,13 +262,104 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-    private void setInactive(Order order){
-         order.setStatus(RequestStatus.INACTIVE.toString());
-         orderDatabaseReference.child(orderId).setValue(order);
-         Toast.makeText(this, "successfully updated  ", Toast.LENGTH_SHORT).show();
+    private void completedOrder() {
+        Query checkUser = orderDatabaseReference.orderByChild("id").equalTo(orderId);
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot != null && snapshot.exists()) {
+                    Order order = null;
+                    for (DataSnapshot userSnapShot : snapshot.getChildren()) {
+                        order = userSnapShot.getValue(Order.class);
+                        break;
+                    }
+                    if (order != null)
+                        setCompleted(order);
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
     }
 
-    private void customToolBar(){
+    private void approveOrder() {
+        Query checkUser = orderDatabaseReference.orderByChild("id").equalTo(orderId);
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot != null && snapshot.exists()) {
+                    Order order = null;
+                    for (DataSnapshot userSnapShot : snapshot.getChildren()) {
+                        order = userSnapShot.getValue(Order.class);
+                        break;
+                    }
+                    if (order != null)
+                        setApprove(order);
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void setInactive(Order order) {
+        String queryColumn = order.getBuyerId() + "_" + order.getSellerId() + "_" + order.getType() + "_" + RequestStatus.INACTIVE.toString();
+
+
+        order.setStatus(RequestStatus.INACTIVE.toString());
+        order.setBuyerId_sellerId_type_status(queryColumn);
+        orderDatabaseReference.child(orderId).setValue(order);
+        Toast.makeText(this, "successfully updated  ", Toast.LENGTH_SHORT).show();
+
+
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra("state", 0);
+        setResult(Activity.RESULT_OK, replyIntent);
+        finish();
+    }
+
+    private void setCompleted(Order order) {
+        String queryColumn = order.getBuyerId() + "_" + order.getSellerId() + "_" + order.getType() + "_" + RequestStatus.COMPLETED.toString();
+
+
+        order.setStatus(RequestStatus.COMPLETED.toString());
+        order.setBuyerId_sellerId_type_status(queryColumn);
+        orderDatabaseReference.child(orderId).setValue(order);
+        Toast.makeText(this, "successfully updated  ", Toast.LENGTH_SHORT).show();
+
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra("state", 1);
+        setResult(Activity.RESULT_OK, replyIntent);
+        finish();
+    }
+
+    private void setApprove(Order order) {
+        String queryColumn = order.getBuyerId() + "_" + order.getSellerId() + "_" + order.getType() + "_" + RequestStatus.ACTIVE.toString();
+
+
+        order.setStatus(RequestStatus.ACTIVE.toString());
+        order.setBuyerId_sellerId_type_status(queryColumn);
+        orderDatabaseReference.child(orderId).setValue(order);
+        Toast.makeText(this, "successfully updated  ", Toast.LENGTH_SHORT).show();
+
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra("state", 2);
+        setResult(Activity.RESULT_OK, replyIntent);
+        finish();
+    }
+
+    private void customToolBar() {
         MaterialToolbar materialToolbar = findViewById(R.id.topAppBar);
         setSupportActionBar(materialToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -118,11 +118,11 @@ public class OrderMetalDialog {
         String sellerAddress = Kokis.getKokisString("address"," ");
 
         if (id != null) {
-            String queryColumn = buyerId+"_"+sellerId+"_"+ WasteType.METAL.toString() +"_"+ RequestStatus.ACTIVE.toString();
+            String queryColumn = buyerId+"_"+sellerId+"_"+ WasteType.METAL.toString() +"_"+ RequestStatus.PROCESSING.toString();
             Order order = new Order(id,
                     buyerId,buyerModel.getUser().getFirstName(), buyerModel.getUser().getEmail(),buyerModel.getUser().getPhone(),buyerModel.getUser().getAddress(),
                     sellerId,sellerName,sellerEmail,sellerPhone,sellerAddress,
-                    Double.toString(price),totalWeightForDb,WasteType.METAL.toString() ,RequestStatus.ACTIVE.toString(),queryColumn);
+                    Double.toString(price),totalWeightForDb,WasteType.METAL.toString() ,RequestStatus.PROCESSING.toString(),queryColumn);
             orderDatabaseReference.child(id).setValue(order);
 
 

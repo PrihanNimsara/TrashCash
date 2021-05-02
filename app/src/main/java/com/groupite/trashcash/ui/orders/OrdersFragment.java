@@ -42,6 +42,10 @@ public class OrdersFragment extends Fragment {
     TextView textViewOrderNotFound;
 
 
+    String userType ;
+    String userId;
+
+
     private static OrderAdapter adapter;
 
     @Override
@@ -63,16 +67,22 @@ public class OrdersFragment extends Fragment {
         textViewOrderNotFound = root.findViewById(R.id.tv_order);
         listView = (ListView) root.findViewById(R.id.list);
 
-        String userType = Kokis.getKokisString("user_type", " ");
-        String userId =  Kokis.getKokisString("user_id"," ");
+        userType = Kokis.getKokisString("user_type", " ");
+        userId =  Kokis.getKokisString("user_id"," ");
+
+        return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
         if(userType.equalsIgnoreCase(UserType.AGENT.toString())){
             getDataBuyer(userId);
         }else {
             getDataSeller(userId);
         }
-        return root;
     }
-
 
     private void getDataSeller(String userId){
         Query checkOrders = orderDatabaseReference.orderByChild("sellerId").equalTo(userId.toString());

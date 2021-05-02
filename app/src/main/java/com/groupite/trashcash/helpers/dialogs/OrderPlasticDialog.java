@@ -115,11 +115,11 @@ public class OrderPlasticDialog {
         String sellerAddress = Kokis.getKokisString("address"," ");
 
         if (id != null) {
-            String queryColumn = buyerId+"_"+sellerId+"_"+ WasteType.PLASTIC.toString() +"_"+ RequestStatus.ACTIVE.toString();
+            String queryColumn = buyerId+"_"+sellerId+"_"+ WasteType.PLASTIC.toString() +"_"+ RequestStatus.PROCESSING.toString();
             Order order = new Order(id,
                     buyerId,buyerModel.getUser().getFirstName(), buyerModel.getUser().getEmail(),buyerModel.getUser().getPhone().toString(),buyerModel.getUser().getAddress().toString(),
                     sellerId,sellerName,sellerEmail,sellerPhone,sellerAddress,
-                    Double.toString(price),totalWeightForDb,WasteType.PLASTIC.toString() ,RequestStatus.ACTIVE.toString(),queryColumn);
+                    Double.toString(price),totalWeightForDb,WasteType.PLASTIC.toString() ,RequestStatus.PROCESSING.toString(),queryColumn);
             orderDatabaseReference.child(id).setValue(order);
 
 

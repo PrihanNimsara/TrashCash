@@ -48,15 +48,15 @@
     <string name="compensation_price">Compensation Price (Rs)</string>
     <string name="price">Price (Rs) : </string>
 
-    <string name="paper_weight">Paper Weight (Kg) </string>
-    <string name="paper_price_for_kg">Paper Price for Kg (Rs) </string>
+    <string name="paper_weight">Paper Weight in (Kg) </string>
+    <string name="paper_price_for_kg">Paper Price for 1 Kg (Rs) </string>
     <string name="paper_compensation_price">Paper Compensation Price (Rs)</string>
 
-    <string name="plastic_weight">Plastic Weight (Kg) </string>
-    <string name="plastic_price_for_kg">Plastic Price for Kg (Rs) </string>
+    <string name="plastic_weight">Plastic Weight in (Kg) </string>
+    <string name="plastic_price_for_kg">Plastic Price for 1 Kg (Rs) </string>
     <string name="plastic_compensation_price">Plastic Compensation Price (Rs)</string>
 
-    <string name="metal_weight">Metal Weight (Kg) </string>
+    <string name="metal_weight">Metal Weight in (Kg) </string>
     <string name="metal_price_for_kg">Metal Price for 1 Kg (Rs) </string>
     <string name="metal_compensation_price">Metal Compensation Price (Rs)</string>
 

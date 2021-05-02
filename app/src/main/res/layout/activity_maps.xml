@@ -81,24 +81,25 @@ tools:context=".activities.OrderDetaillsActivity">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_call"
-            style="?attr/materialButtonOutlinedStyle"
-
             android:layout_width="0dp"
+
             android:layout_height="wrap_content"
-
-
             android:layout_below="@+id/map"
-            android:layout_margin="10dp"
 
+
+            android:layout_margin="10dp"
             android:text="@string/call"
 
+            android:textAllCaps="false"
+
+
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/bt_end"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/map" />
         <com.google.android.material.button.MaterialButton
-            style="?attr/materialButtonOutlinedStyle"
+            android:textAllCaps="false"
 
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:id="@+id/bt_end"
@@ -106,7 +107,43 @@ tools:context=".activities.OrderDetaillsActivity">
             android:layout_margin="10dp"
 
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bt_call"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_approve"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:text="Order Approve"
+            android:textAllCaps="false"
+
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_end" />
+
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/bt_complete"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:text="Completed"
+            android:textAllCaps="false"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_approve" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

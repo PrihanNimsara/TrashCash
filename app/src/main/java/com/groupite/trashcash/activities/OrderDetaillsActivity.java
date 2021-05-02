@@ -1,7 +1,9 @@
 package com.groupite.trashcash.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.groupite.trashcash.R;
+import com.groupite.trashcash.helpers.RequestStatus;
 import com.groupite.trashcash.models.Order;
 
 public class OrderDetaillsActivity extends AppCompatActivity {
@@ -49,7 +52,7 @@ public class OrderDetaillsActivity extends AppCompatActivity {
         intent.putExtra("sellerPhone", order.getSellerPhone());
         intent.putExtra("buyerPhone", order.getBuyerPhone());
         intent.putExtra("orderID", order.getId());
-        this.startActivity(intent);
+        this.startActivityForResult(intent,3);
     }
 
     private void setData() {
@@ -76,5 +79,22 @@ public class OrderDetaillsActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return super.onSupportNavigateUp();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 3 && resultCode == Activity.RESULT_OK) {
+            int change = (int) data.getSerializableExtra("state");
+            if (change == 0){
+                textViewStatus.setText(RequestStatus.INACTIVE.toString().trim());
+            }else  if(change == 1){
+                textViewStatus.setText(RequestStatus.COMPLETED.toString().trim());
+            }else  if(change == 2){
+                textViewStatus.setText(RequestStatus.ACTIVE.toString().trim());
+            }
+        }
     }
 }

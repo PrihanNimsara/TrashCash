@@ -120,11 +120,11 @@ public class OrderPaperDialog {
 
 
         if (id != null) {
-            String queryColumn = buyerId+"_"+sellerId+"_"+ WasteType.PAPER.toString() +"_"+ RequestStatus.ACTIVE.toString();
+            String queryColumn = buyerId+"_"+sellerId+"_"+ WasteType.PAPER.toString() +"_"+ RequestStatus.PROCESSING.toString();
             Order order = new Order(id,
                     buyerId,buyerModel.getUser().getFirstName(), buyerModel.getUser().getEmail(),buyerModel.getUser().getPhone().toString(),buyerModel.getUser().getAddress().toString(),
                     sellerId,sellerName,sellerEmail,sellerPhone,sellerAddress,
-                    Double.toString(price),totalWeightForDb.toString(),WasteType.PAPER.toString() ,RequestStatus.ACTIVE.toString(),queryColumn);
+                    Double.toString(price),totalWeightForDb.toString(),WasteType.PAPER.toString() ,RequestStatus.PROCESSING.toString(),queryColumn);
             orderDatabaseReference.child(id).setValue(order);
 
             orderCreateSuccess.successCallback();
