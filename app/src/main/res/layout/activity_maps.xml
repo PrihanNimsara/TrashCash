@@ -117,7 +117,7 @@ tools:context=".activities.OrderDetaillsActivity">
             android:layout_height="wrap_content"
 
             android:layout_margin="10dp"
-            android:text="Order Approve"
+            android:text="Order Accept"
             android:textAllCaps="false"
 
 
