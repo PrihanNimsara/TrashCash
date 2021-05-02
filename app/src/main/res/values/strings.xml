@@ -67,6 +67,7 @@
 
     <string name="not_available">N/A</string>
     <string name="apply">Place an Order</string>
+    <string name="apply1">Update</string>
     <string name="well_done">Well Done</string>
     <string name="your_profile_is">Your profile has been created.</string>
     <string name="cancel">Cancel</string>
