@@ -10,11 +10,20 @@ TrashCash is an android application which is serve as a platform between clients
 # Project Setup and Build Steps
 #
 Get a stable internet conection
+#
 Get jave installed in your computer
+#
 Install android studio latast stable version
+#
 Update latest SDK in android studio
+
+
+
+
 
 #
 Checkout to branch - master
+#
 Select your device
+#
 Run the app on selected emulator device
