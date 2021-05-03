@@ -27,7 +27,7 @@ Checkout to branch - master
 Select your device
 #
 Run the app on selected emulator device
-
+#
 
 
 
