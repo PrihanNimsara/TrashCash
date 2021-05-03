@@ -20,7 +20,8 @@ Update latest SDK in android studio
 
 
 
-
+#
+Clone the repository from the url from github - git clone https://github.com/PrihanNimsara/TrashCash.git
 #
 Checkout to branch - master
 #
