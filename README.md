@@ -11,7 +11,7 @@ TrashCash is an android application which is serve as a platform between clients
 #
 Get a stable internet conection
 #
-Get jave installed in your computer
+Get java installed in your computer
 #
 Install android studio latast stable version
 #
