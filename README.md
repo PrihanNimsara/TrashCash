@@ -27,3 +27,10 @@ Checkout to branch - master
 Select your device
 #
 Run the app on selected emulator device
+
+
+
+
+### Download APK From Here
+#
+![alt tag](https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=sharing)
