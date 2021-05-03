@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/x">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="101dp"
+
+                android:background="@drawable/rounded_bottom_corners"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="30dp"
+
+                android:src="@drawable/profile_image"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="2dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"/>
+
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_margin="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/textFieldOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_logo">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:editable="false"
+                        android:id="@+id/tv_first_name_title_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldOne"
+
+                    android:layout_margin="10dp"
+
+
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/textFieldTWO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:editable="false"
+                        android:id="@+id/tv_email_title_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldTWO"
+
+                    android:layout_margin="10dp"
+
+
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/textFieldThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:editable="false"
+                        android:id="@+id/tv_phone_number_title_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldThree"
+
+                    android:layout_margin="10dp"
+
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/textFieldFour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:editable="false"
+                        android:id="@+id/tv_address_title_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+<!--                username-->
+
+                <com.google.android.material.textfield.TextInputLayout
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldFour"
+
+                    android:layout_margin="10dp"
+
+
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/textFieldFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:editable="false"
+                        android:id="@+id/tv_user_name_title_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldFive"
+
+                    android:layout_margin="10dp"
+
+
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/textFieldSix"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+
+                    app:endIconMode="password_toggle"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textPassword"
+                        android:editable="false"
+                        android:id="@+id/tv_password_title_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFieldSix"
+                    android:id="@+id/bt_update"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:text="@string/update"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

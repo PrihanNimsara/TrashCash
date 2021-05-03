@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "729393514402",
-    "firebase_url": "https://greencountry-13f9a.firebaseio.com",
-    "project_id": "greencountry-13f9a",
-    "storage_bucket": "greencountry-13f9a.appspot.com"
+    "project_number": "957393895673",
+    "project_id": "trashcash-a8b81",
+    "storage_bucket": "trashcash-a8b81.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:729393514402:android:6ba8622f506e7b669a14fb",
+        "mobilesdk_app_id": "1:957393895673:android:e7aca532a13b0447946228",
         "android_client_info": {
           "package_name": "com.groupite.trashcash"
         }
       },
       "oauth_client": [
         {
-          "client_id": "729393514402-m7u3j2fjl3odcgkhk1rnekmokt7ropaa.apps.googleusercontent.com",
+          "client_id": "957393895673-qub06oglu7j3i7oca59oicktrc3idg5s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCP7McvnMxzUG94t5RMuMo8SNzcaxfKyjs"
+          "current_key": "AIzaSyCjYtM9DQcJR3hBX8XxtGDO8oIShJi46Kk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "729393514402-m7u3j2fjl3odcgkhk1rnekmokt7ropaa.apps.googleusercontent.com",
+              "client_id": "957393895673-qub06oglu7j3i7oca59oicktrc3idg5s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

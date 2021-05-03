@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:backgroundTint="@color/colorPrimary"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="0.5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginStart="3dp"
+        android:background="@color/conversation_list_item_back_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+
+
+            android:id="@+id/tv_first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/name"
+
+            android:textSize="12sp"
+
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- name -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/tv_email"
+            android:layout_width="0dp"
+
+
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:text="@string/city"
+
+
+
+            android:textSize="12sp"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        <!-- city -->
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_phone"
+
+            android:layout_width="0dp"
+
+
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_email"
+            android:layout_margin="10dp"
+            android:text="@string/email_address"
+
+            android:textSize="12sp"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+        <!-- email -->
+        <TextView
+            android:id="@+id/tv_email_addres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+            android:layout_below="@+id/tv_phone"
+            android:layout_margin="10dp"
+            android:text="@string/phone_no"
+
+            android:textSize="12sp"
+
+
+
+
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_addres" />
+
+        <!-- phone -->
+        <TextView
+            android:id="@+id/tv_phone_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:text="@string/na"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/main_black"
+
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_addres"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialButtonOutlinedStyle"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_address"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view"
+            android:textAllCaps="false"
+            android:id="@+id/bt_apply"
+           android:layout_marginRight="10dp"
+
+            android:textSize="12sp"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
