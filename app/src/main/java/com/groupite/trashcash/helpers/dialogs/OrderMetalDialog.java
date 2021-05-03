@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import prihanofficial.com.kokis.logics.Kokis;
 
 public class OrderMetalDialog {
+    //variables
     TextView textViewMetalPrice;
     Button buttonApply;
     Button buttonCancel;
