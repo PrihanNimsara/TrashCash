@@ -102,7 +102,7 @@ tools:context=".activities.OrderDetaillsActivity">
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:id="@+id/bt_end"
+            android:id="@+id/bt_cancel"
             android:text="@string/end"
             android:layout_margin="10dp"
 
@@ -123,7 +123,7 @@ tools:context=".activities.OrderDetaillsActivity">
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_end" />
+            app:layout_constraintTop_toBottomOf="@+id/bt_cancel" />
 
 
         <com.google.android.material.button.MaterialButton

@@ -53,7 +53,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private String buyerPhone = " ";
     private String orderId = " ";
 
-    Button buttonCall, buttonEnd, buttonComplete, buttonApprove;
+    Button buttonCall, buttonCancel, buttonComplete, buttonApprove;
 
     DatabaseReference root;
     DatabaseReference orderDatabaseReference;
@@ -76,7 +76,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         orderId = getIntent().getStringExtra("orderID");
 
         buttonCall = findViewById(R.id.bt_call);
-        buttonEnd = findViewById(R.id.bt_end);
+        buttonCancel = findViewById(R.id.bt_cancel);
         buttonComplete = findViewById(R.id.bt_complete);
         buttonApprove = findViewById(R.id.bt_approve);
 
@@ -85,7 +85,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
 
-        buttonEnd.setOnClickListener(new View.OnClickListener() {
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cancelOrder();
@@ -127,11 +127,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         String userType = Kokis.getKokisString("user_type", " ");
         if (userType.equalsIgnoreCase(UserType.CLIENT.toString())) {
             buttonComplete.setVisibility(View.GONE);
-            buttonEnd.setVisibility(View.GONE);
+            buttonCancel.setVisibility(View.GONE);
             buttonApprove.setVisibility(View.GONE);
         } else {
             buttonComplete.setVisibility(View.VISIBLE);
-            buttonEnd.setVisibility(View.VISIBLE);
+            buttonCancel.setVisibility(View.VISIBLE);
             buttonApprove.setVisibility(View.VISIBLE);
         }
 
