@@ -50,10 +50,10 @@ https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=shari
 
 ## Authors
 
-Prihan Nimsara
-Janani Bodaragama
-Roshan Maduwantha
-Shehan Dinuksha Fernando
+- Prihan Nimsara
+- Janani Bodaragama
+- Roshan Maduwantha
+- Shehan Dinuksha Fernando
 
 ## License
 
