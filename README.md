@@ -31,6 +31,12 @@ Select your device
 Run the app on selected emulator device
 #
 
+
+### Download APK From Here    ![alt tag](https://api.bintray.com/packages/prihannimsara/KokisRepository/kokis/images/download.svg)
+#
+https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=sharing
+
+
 ## Limitations
 
 - Currently min SDK is set to 17
@@ -64,6 +70,3 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 
 
-### Download APK From Here    ![alt tag](https://api.bintray.com/packages/prihannimsara/KokisRepository/kokis/images/download.svg)
-#
-https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=sharing
