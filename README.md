@@ -32,10 +32,9 @@ Run the app on selected emulator device
 #
 
 
-### Download APK From Here    ![alt tag](https://api.bintray.com/packages/prihannimsara/KokisRepository/kokis/images/download.svg)
-#
-https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=sharing
+## Download APK From Here  ![alt tag](https://api.bintray.com/packages/prihannimsara/KokisRepository/kokis/images/download.svg)
 
+https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=sharing
 
 ## Limitations
 
