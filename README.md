@@ -8,10 +8,12 @@ TrashCash is an android application which is serve as a platform between clients
 - Get java installed in your computer
 - Install android studio latast stable version
 - Update latest SDK in android studio
-- Clone the repository from the url from github - git clone https://github.com/PrihanNimsara/TrashCash.git
-- Checkout to branch - master
-- Select your device
-- Run the app on selected emulator device
+- Clone the repository from the url from github 
+    - git clone address: https://github.com/PrihanNimsara/TrashCash.git
+- Checkout to branch 
+    - master
+- Configure your emulator & select the device
+- Run the app 
 
 ## Download APK From Here  ![alt tag](https://api.bintray.com/packages/prihannimsara/KokisRepository/kokis/images/download.svg)
 
