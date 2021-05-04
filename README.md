@@ -48,11 +48,12 @@ https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=shari
 - 1.0.0
     - Initial release
 
-## Author
+## Authors
 
-Prihan Nimsara, [prihanofficial.com](http://prihanofficial.com)
-
-Checkout my other contributions, https://github.com/PrihanNimsara?tab=repositories
+Prihan Nimsara
+Janani Bodaragama
+Roshan Maduwantha
+Shehan Dinuksha Fernando
 
 ## License
 
