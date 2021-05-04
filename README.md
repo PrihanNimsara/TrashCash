@@ -3,28 +3,15 @@
 TrashCash is an android application which is serve as a platform between clients who wish to sell household trash and trash collectors. By using this app people can sell trash to trash collectors and made some money from it. As agents, trash collectors can easily contact the sellers and buy their reusable trash to recycle.
 
 ## Project Setup and Build Steps
-#
-Get a stable internet conection
-#
-Get java installed in your computer
-#
-Install android studio latast stable version
-#
-Update latest SDK in android studio
 
-
-
-
-#
-Clone the repository from the url from github - git clone https://github.com/PrihanNimsara/TrashCash.git
-#
-Checkout to branch - master
-#
-Select your device
-#
-Run the app on selected emulator device
-#
-
+- Get a stable internet conection
+- Get java installed in your computer
+- Install android studio latast stable version
+- Update latest SDK in android studio
+- Clone the repository from the url from github - git clone https://github.com/PrihanNimsara/TrashCash.git
+- Checkout to branch - master
+- Select your device
+- Run the app on selected emulator device
 
 ## Download APK From Here  ![alt tag](https://api.bintray.com/packages/prihannimsara/KokisRepository/kokis/images/download.svg)
 
