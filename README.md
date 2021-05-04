@@ -19,8 +19,7 @@ You can download the latest app by using the below link.
 
 - https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=sharing
 
-The play store link will be coming soon.
-- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
+- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `The play store link will be coming soon.`
 
 ## Limitations
 
