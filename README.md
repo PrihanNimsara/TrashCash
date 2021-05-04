@@ -57,7 +57,7 @@ https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=shari
 
 ## License
 
-Copyright 2017 Prihan Nimsara
+Copyright 2021 IT-E
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
