@@ -10,8 +10,7 @@ TrashCash is an android application which is serve as a platform between clients
 - Update latest SDK in android studio
 - Clone the repository from the url from github 
     - git clone address: https://github.com/PrihanNimsara/TrashCash.git
-- Checkout to branch 
-    - master
+- Checkout from master branch 
 - Configure your emulator & select the device
 - Run the app 
 
