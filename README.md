@@ -31,6 +31,37 @@ Select your device
 Run the app on selected emulator device
 #
 
+## Limitations
+
+- Currently min SDK is set to 17
+
+## Changelog
+
+- 1.1.0
+    - Stable the release with sample code
+- 1.0.0
+    - Initial release
+
+## Author
+
+Prihan Nimsara, [prihanofficial.com](http://prihanofficial.com)
+
+Checkout my other contributions, https://github.com/PrihanNimsara?tab=repositories
+
+## License
+
+Copyright 2017 Prihan Nimsara
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+
+
+
+
 
 
 ### Download APK From Here    ![alt tag](https://api.bintray.com/packages/prihannimsara/KokisRepository/kokis/images/download.svg)
