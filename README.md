@@ -39,7 +39,7 @@ https://drive.google.com/file/d/1s3b4sz2D8Br8kumVmzdjMwhbGtdRIIn0/view?usp=shari
 
 ## Limitations
 
-- Currently min SDK is set to 17
+- Currently min SDK is set to 21
 
 ## Changelog
 
